@@ -71,6 +71,7 @@ export default function build(root, ctx) {
   const lineFor = () => (theme.mode === 'dark' ? 'It\'s dark in here.' : 'Too much to see — it all blurs together.') + ' <b>Move me around</b> — let\'s look closer.';
   const c2 = comic(root, { kind: 'speech', html: lineFor(), at: { left: '50%', top: '55%' }, width: 280, tail: 'top', tailAt: 30 });
   const offTheme = theme.onChange(() => c2.set(lineFor()));
+  let boxX = innerWidth / 2, boxY = innerHeight * 0.55;
   const c3 = comic(root, { kind: 'caption', html: 'Up close, it\'s just numbers. The pattern is in there, but numbers alone won\'t show it.', at: { right: '6vw', top: '20vh' }, width: 330, tilt: 0.8 });
   const c4 = comic(root, { kind: 'caption', html: 'Put every value where it belongs, and the pattern appears. <b>This is what visualization does.</b>', at: { left: '6vw', top: '20vh' }, width: 360 });
   const c5 = comic(root, { kind: 'speech', html: 'This one is a tree, made of laser measurements. Shall we see the whole forest?', at: { right: '7vw', bottom: '24vh' }, width: 300, tail: 'right', tailAt: 30 });
@@ -143,6 +144,16 @@ export default function build(root, ctx) {
       const b = root.getBoundingClientRect();
       const lx = fx - b.left, ly = fy - b.top;
       veil.style.setProperty('--fx', `${lx}px`); veil.style.setProperty('--fy', `${ly}px`);
+      // the speech box rides along under the firefly while it is being led
+      // (eased, so it trails it softly; kept on screen)
+      if (c2.el.classList.contains('show')) {
+        const bw = c2.el.offsetWidth || 280, bh = c2.el.offsetHeight || 90;
+        const tx = Math.min(Math.max(lx - 30, 12), W - bw - 12), ty = Math.min(ly + 46, H - bh - 110);
+        boxX += (tx - boxX) * (1 - Math.exp(-dt * 4)); boxY += (ty - boxY) * (1 - Math.exp(-dt * 4));
+        c2.el.style.left = `${boxX.toFixed(1)}px`; c2.el.style.top = `${boxY.toFixed(1)}px`;
+        // the tail points at the firefly
+        c2.el.style.setProperty('--tail-x', `${Math.min(Math.max(lx - boxX - 9, 16), bw - 34).toFixed(0)}px`);
+      }
       if (phase === 'dark') {
         seen.add(`${Math.floor(lx / (W / 8))},${Math.floor(ly / (H / 6))}`);
         explored = seen.size / 48;
