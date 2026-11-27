@@ -24,12 +24,13 @@ const CSS = `
    which undid the centring, moved it from under the pointer, and flickered) */
 /* the button is HIDDEN in the dark, somewhere on the board: under the veil,
    it shows only where the firefly's light falls (and stays once found) */
-.spark-btn { position: absolute; translate: -50% -50%; z-index: 20; transition: transform .15s, box-shadow .15s; }
+.spark-btn { position: absolute; translate: -50% -50%; white-space: nowrap; z-index: 20; transition: transform .15s, box-shadow .15s; }
 .spark-btn:not(.found) { opacity: .4; }   /* (through the veil: barely there until the light falls on it) */
 .spark-btn.found { z-index: 24; animation: spark-found 1.6s ease-in-out infinite; }
 @keyframes spark-found { 50% { box-shadow: 3px 3px 0 var(--shadow), 0 0 0 9px var(--glow-soft); } }
 .spark-btn.gone { opacity: 0; pointer-events: none; transition: opacity .5s; }
-.spark .comic.caption { z-index: 23; }
+.spark .comic { z-index: 23; }
+@media (max-width: 760px) { .spark .comic.caption { left: 4vw !important; right: auto !important; top: 12vh !important; } }   /* (every text box above the dark: only the button hides in it) */
 `;
 
 const N = 2200;
@@ -71,7 +72,9 @@ export default function build(root, ctx) {
   const g = cv.getContext('2d');
   const btn = el('button', { class: 'sk-btn primary spark-btn', type: 'button' }, root, '✦ Visualize it');
   // hidden in one of a few dark corners, away from the boxes and the middle
-  const SPOTS = [[0.82, 0.72], [0.18, 0.78], [0.86, 0.42], [0.62, 0.84], [0.3, 0.6]];
+  const SPOTS = innerWidth < 760
+    ? [[0.7, 0.66], [0.3, 0.74], [0.68, 0.46], [0.32, 0.56]]   // (a phone: well inside the edges)
+    : [[0.82, 0.72], [0.18, 0.78], [0.86, 0.42], [0.62, 0.84], [0.3, 0.6]];
   const spot = SPOTS[Math.floor(Math.random() * SPOTS.length)];
   btn.style.left = `${spot[0] * 100}%`; btn.style.top = `${spot[1] * 100}%`;
   let found = false;
@@ -167,7 +170,7 @@ export default function build(root, ctx) {
       if (phase === 'dark') {
         seen.add(`${Math.floor(lx / (W / 8))},${Math.floor(ly / (H / 6))}`);
         explored = seen.size / 48;
-        if ((explored > 0.15 || timeIn > 7) && !c3.el.classList.contains('show') && !found) { c2.hide(); c3.show(); }
+        if ((explored > 0.15 || timeIn > 7) && !c3.el.classList.contains('show') && !found) { c2.hide(); if (innerWidth < 760) c1.hide(); c3.show(); }
         // found: the light has fallen on it, it comes out of the dark and stays
         const br = btn.getBoundingClientRect(), b0 = root.getBoundingClientRect();
         if (!found && Math.hypot(br.left + br.width / 2 - b0.left - lx, br.top + br.height / 2 - b0.top - ly) < 120) {

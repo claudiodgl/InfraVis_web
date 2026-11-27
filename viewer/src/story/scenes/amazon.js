@@ -27,6 +27,13 @@ const CSS = `
 .amazon .puff { position: absolute; width: 140px; height: 110px; margin: -55px 0 0 -70px; pointer-events: none; z-index: 8; opacity: 0; }
 .amazon .puff.go { animation: puff .7s ease-out; }
 @keyframes puff { 0% { opacity: 0; transform: scale(.4); } 30% { opacity: 1; } 100% { opacity: 0; transform: scale(1.4); } }
+@media (max-width: 760px) {
+  .amazon .col { left: 4vw; right: 4vw; width: auto; top: 11vh; gap: 8px; }
+  .amazon .col .comic { font-size: 14.5px; }
+  .amazon .jungle-mount { left: 0; right: 0; top: 34vh; bottom: 0; }
+  .amazon .tool-row { left: 4vw; top: auto; bottom: 76px; }
+  .amazon .bridge .comic { left: 4vw !important; top: 12vh !important; }
+}
 /* the bridge: one forest turning into another */
 .amazon .bridge { position: absolute; inset: 0; z-index: 20; color: var(--ink); }
 .amazon .bridge .comic { z-index: 21; }
@@ -69,13 +76,15 @@ export default function build(root, ctx) {
     // (the background giants are the bridge's, kept: crossing())
     // the crown over the 3D trunk and limb, and vines hanging from it
     const tx = limbStart[0], span = limbEnd[0] - tx;
+    // the crown's line: high on a wide screen, just above the limb on a phone (clear of the text)
+    const CY = Math.max(H * 0.16, limbEnd[1] - H * 0.2);
     const crown = [];
     for (let i = 0; i <= 16; i++) {
       const a = Math.PI * 1.02 + (i / 16) * Math.PI * 0.98, k = i % 2 ? 1.06 : 0.94;
-      crown.push([tx + span * 0.5 + Math.cos(a) * span * 0.75 * k, H * 0.16 + Math.sin(a) * H * 0.09 * k]);
+      crown.push([tx + span * 0.5 + Math.cos(a) * span * 0.75 * k, CY + Math.sin(a) * H * 0.09 * k]);
     }
     add([wobble(crown, r, 3)]);
-    [0.3, 0.55, 0.92].forEach((t, i) => add(vine(tx + span * t, H * 0.15 + (i % 2) * 18, (limbEnd[1] - H * 0.15) * 0.8 + i * 20, 50 + i)));
+    [0.3, 0.55, 0.92].forEach((t, i) => add(vine(tx + span * t, CY - H * 0.01 + (i % 2) * 18, (limbEnd[1] - CY) * 0.8 + i * 20, 50 + i)));
     // the ground line and the ferns: behind the 3D, so the cat always stands
     // in front of every sketched line (only the flood water is drawn over it)
     const gF = svgEl('g', { class: 'ink boil', 'stroke-width': 2 }, back);
@@ -107,7 +116,7 @@ export default function build(root, ctx) {
   // rainforest trees and their vines draw in where they stood, the water
   // rises — and the drawing gives way to the 3D forest. The jaguar loads
   // meanwhile.
-  const GY = H * 0.868;   // ≈ the jungle's ground line on screen (corrected once the 3D is in)
+  const GY = innerWidth < 760 ? H * 0.9 : H * 0.868;   // ≈ the jungle's ground line on screen (corrected once the 3D is in)
   async function crossing() {
     if (!alive) return null;
     const ov = el('div', { class: 'bridge board' }, root);
@@ -159,7 +168,7 @@ export default function build(root, ctx) {
   function placeHit() {
     if (!jungle) return;
     const [x, y] = jungle.jaguarScreen(mount.clientWidth, mount.clientHeight);
-    hit.style.left = `${x + mount.offsetLeft}px`; hit.style.top = `${y}px`;
+    hit.style.left = `${x + mount.offsetLeft}px`; hit.style.top = `${y + mount.offsetTop}px`;
   }
 
   function setSeason(s) {
@@ -170,7 +179,7 @@ export default function build(root, ctx) {
     bWet.setAttribute('aria-pressed', String(s === 'wet')); bDry.setAttribute('aria-pressed', String(s === 'dry'));
     setWater(s === 'wet');
     const [x, y] = jungle.jaguarScreen(mount.clientWidth, mount.clientHeight);
-    puff.style.left = `${x + mount.offsetLeft}px`; puff.style.top = `${y}px`;
+    puff.style.left = `${x + mount.offsetLeft}px`; puff.style.top = `${y + mount.offsetTop}px`;
     puff.classList.remove('go'); void puff.offsetWidth; puff.classList.add('go');
     c1.hide(); c2.hide();
     if (s === 'wet') { cDry.hide(); cWet.show({ delay: 500 }); c3.show({ delay: 1200 }); }
@@ -207,9 +216,9 @@ export default function build(root, ctx) {
       const got = await ctx.whileLoading(loading);
       if (!got) return;
       jungle = got.j;
-      const w = mount.clientWidth, h = mount.clientHeight, ox = mount.offsetLeft;
-      const sc = (xy) => [xy[0] + ox, xy[1]];
-      groundY = jungle.project(1.1, 0, 0.6, w, h)[1];   // the ground at the cat's own depth: its paws meet this line
+      const w = mount.clientWidth, h = mount.clientHeight, ox = mount.offsetLeft, oy = mount.offsetTop;
+      const sc = (xy) => [xy[0] + ox, xy[1] + oy];
+      groundY = jungle.project(1.1, 0, 0.6, w, h)[1] + oy;   // the ground at the cat's own depth: its paws meet this line
       if (giants) giants.style.transform = `translateY(${(groundY - GY).toFixed(1)}px)`;   // (onto the real ground line)
       const ls = sc(jungle.project(got.LIMB.x0, got.LIMB.y0, 0, w, h)), le = sc(jungle.project(got.LIMB.x1, got.LIMB.y1, 0, w, h));
       const catX = sc(jungle.project(1.1, 0, 0.6, w, h))[0];

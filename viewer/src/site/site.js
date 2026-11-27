@@ -152,6 +152,11 @@ export function createSite(app, { firefly, onStory }) {
   for (let i = 0; i < latest.length; i++) el('button', { type: 'button', 'aria-label': `Slide ${i + 1}` }, dots).addEventListener('click', () => go(i));
   prev.addEventListener('click', () => go(page - 1)); next.addEventListener('click', () => go(page + 1));
   car.addEventListener('mouseenter', () => { hovering = true; }); car.addEventListener('mouseleave', () => { hovering = false; });
+  // a swipe turns it on a phone
+  let sx = null;
+  vp.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') sx = e.clientX; }, { passive: true });
+  vp.addEventListener('pointerup', (e) => { if (sx == null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) go(page + (dx < 0 ? 1 : -1)); }, { passive: true });
+  vp.style.touchAction = 'pan-y';
   go(0);
   bw.insertAdjacentHTML('beforeend', `<p class="s-more"><a href="https://infravis.se/news-events/" target="_blank" rel="noopener">Read More News and Events</a> &gt;&gt;</p>
     <div class="s-sub"><a class="s-btn" href="https://infravis.se/news-events/" target="_blank" rel="noopener" data-perch>Subscribe to the InfraVis Newsletter</a></div>`);
@@ -235,8 +240,13 @@ export function createSite(app, { firefly, onStory }) {
   const headerBar = site.querySelector('.s-header');
   function homePerch() {
     // the free stretch of the bar between the menu and the buttons
-    const nav = site.querySelector('.s-nav a:last-child')?.getBoundingClientRect(), btn = site.querySelector('.s-story-btn')?.getBoundingClientRect();
-    const gapX = nav && btn && btn.left > nav.right + 80 ? (nav.right + btn.left) / 2 : innerWidth * 0.62;
+    // (on a phone the menu is folded away: the gap is between the logo and the buttons)
+    const navA = site.querySelector('.s-nav a:last-child'), btn = site.querySelector('.s-story-btn')?.getBoundingClientRect();
+    const left = navA && navA.offsetParent ? navA.getBoundingClientRect().right : site.querySelector('.s-logo').getBoundingClientRect().right;
+    const burger = site.querySelector('.s-burger'), bR = burger && burger.offsetParent ? burger.getBoundingClientRect().right : 0;
+    const gapX = btn && btn.left > left + 40 ? (left + btn.left) / 2
+      : bR && innerWidth - bR > 50 ? (bR + innerWidth) / 2   // (a phone: the free end of the bar, after the menu)
+      : innerWidth * 0.62;
     perch = { el: headerBar, fx: gapX / innerWidth, header: true };
     firefly.tone('white');
     const [x, y] = perchPoint(perch);

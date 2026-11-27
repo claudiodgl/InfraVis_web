@@ -173,6 +173,20 @@
 }
 @media (max-width: 700px) {
   .s-card { flex-basis: 100%; }
+  .s-wrap { padding: 0 18px; }
+  .s-header { height: 72px; }
+  .s-header .s-wrap { gap: 12px; }
+  .s-logo img { height: 32px; }
+  .s-nav.open { top: 72px; }
+  .s-hero { padding: 34px 0 96px; }
+  .s-hero h1 { font-size: 28px; margin-bottom: 18px; }
+  .s-hero p { font-size: 16px; line-height: 1.6; }
+  .s-partners .row { justify-content: center; gap: 16px 22px; }
+  .s-partners a { height: 42px; }
+  .s-call h2 { font-size: 24px; }
+  .s-card h3 { font-size: 20px; } .s-card .body { padding: 16px 4px 0; }
+  .s-arrow { display: none; }   /* (swipe instead) */
+  .s-steps, .s-levels .cols { gap: 10px; }
   .s-story-btn span, .s-pill { display: none; }
   .s-footer .top { grid-template-columns: 1fr; }
 }

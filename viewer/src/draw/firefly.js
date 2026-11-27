@@ -116,7 +116,9 @@ export function createFirefly() {
   }
   resize(); addEventListener('resize', resize);
   let realPointer = false;   // (no startle until the visitor has actually moved the pointer)
-  addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; realPointer = true; }, { passive: true });
+  addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; realPointer = e.pointerType === 'mouse'; }, { passive: true });
+  // (a finger leads it too, where it follows; a tap does not startle it)
+  addEventListener('pointerdown', (e) => { pointer = { x: e.clientX, y: e.clientY }; }, { passive: true });
   document.addEventListener('pointerleave', () => { realPointer = false; });
 
   function bez(a, b, c, d, t) {

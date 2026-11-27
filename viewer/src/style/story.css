@@ -46,6 +46,21 @@
 .tool-row.show { opacity: 1; transform: none; }
 .tool-row .sk-btn { font-size: 17px; padding: .35em .85em .4em; }
 
+/* ---------- PHONES: the same story, laid out for a narrow screen ---------- */
+@media (max-width: 760px) {
+  .story-top { padding: 10px 4vw; }
+  .story-skip { display: none; }
+  .scene .chapter-tag { top: 52px; left: 4vw; font-size: 18px; }
+  .story-nav { bottom: 12px; column-gap: 8px; }
+  .nav-dots { gap: 5px; }
+  .nav-dots button { width: 12px; height: 12px; }
+  .nav-back { width: 40px; padding: .35em .5em; }
+  .nav-next { font-size: 15px; padding: .45em .8em; max-width: 52vw; overflow: hidden; text-overflow: ellipsis; }
+  .comic { font-size: 15px; max-width: 88vw !important; padding: 10px 13px 11px; box-shadow: 3px 3px 0 var(--shadow); }
+  .tool-row .sk-btn { font-size: 14px; padding: .3em .7em .35em; }
+  .hint { display: none; }
+  .scene { touch-action: none; }   /* (a drag moves the firefly or the 3D, never the page) */
+}
 @media (max-width: 720px) {
   .story-skip { display: none; }
   .story-nav { bottom: 12px; column-gap: 10px; }

@@ -74,7 +74,19 @@ const CSS = `
 .map .detail p { margin: 0 0 6px; font: 15px/1.3 var(--font-comic); }
 .map .detail .row { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--ink-soft); }
 .map .detail a { font-size: 13px; }
-@media (max-width: 900px) { .map .panel { left: 4vw; right: 4vw; width: auto; top: 64vh; bottom: 10vh; } .map .detail { display: none; } }
+@media (max-width: 900px) {
+  .map .panel { left: 3vw; right: 3vw; width: auto; top: 56vh; bottom: 70px; gap: 6px; }
+  .map .panel-head h3 { font-size: 21px; }
+  .map .panel-head span { display: none; }
+  .map .chips .sk-btn, .map .years .sk-btn { font-size: 13px; }
+  .map .plist { min-height: 0; flex: 1 1 0; }
+  .map .prow { font-size: 13px; padding: 5px 9px; }
+  .map .detail { grid-template-columns: 1fr; min-height: 0; padding: 8px; }
+  .map .detail .pic { display: none; }
+  .map .detail p { font-size: 13px; }
+  .map .tip .nums b { font-size: 20px; }
+  .map .comic.caption:not(.tip) { left: 4vw !important; right: auto !important; top: 58vh !important; }
+}
 `;
 
 // story projects that have a small moving picture (ui/minis.js)
@@ -275,14 +287,16 @@ export default function build(root, ctx) {
     const nodeRects = Object.entries(nodeEls).filter(([k]) => k !== id).map(([, e]) => e.getBoundingClientRect());   // (not its own: it sits beside it)
     const me = nodeEls[id].querySelector('.nb').getBoundingClientRect();
     const cx = (me.left + me.right) / 2, cy = (me.top + me.bottom) / 2;
-    const maxX = panel.getBoundingClientRect().left - 12;
+    const narrow = innerWidth < 900;
+    const maxX = narrow ? innerWidth - 12 : panel.getBoundingClientRect().left - 12;
+    const maxY = narrow ? panel.getBoundingClientRect().top - 8 : innerHeight - 90;
     const cands = [
       [me.right + GAP, cy - h / 2], [me.left - GAP - w, cy - h / 2],
       [me.right + GAP * 0.6, me.top - h - GAP * 0.4], [me.left - w - GAP * 0.6, me.top - h - GAP * 0.4],
       [me.right + GAP * 0.6, me.bottom + GAP * 0.4], [me.left - w - GAP * 0.6, me.bottom + GAP * 0.4],
       [cx - w / 2, me.top - GAP - h], [cx - w / 2, me.bottom + GAP + 18],
     ];
-    const fits = ([x, y]) => x >= 12 && x + w <= maxX && y >= 100 && y + h <= innerHeight - 90
+    const fits = ([x, y]) => x >= 12 && x + w <= maxX && y >= 90 && y + h <= maxY
       && !nodeRects.some((r) => x < r.right + M && x + w > r.left - M && y < r.bottom + M && y + h > r.top - M);
     const spot = cands.find(fits) ?? [Math.max(16, box.x - box.w * 0.25), Math.max(box.y + box.h * 0.02, 112)];
     tip.el.style.left = `${spot[0].toFixed(0)}px`;

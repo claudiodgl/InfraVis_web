@@ -21,6 +21,12 @@ const CSS = `
 .forest .tool-row { left: 4vw; bottom: 15vh; }
 .forest .legend { position: absolute; right: 4vw; bottom: 15vh; font: 13px var(--font-ui); color: var(--ink-soft); display: flex; align-items: center; gap: 8px; opacity: 0; transition: opacity .6s; z-index: 12; }
 .forest .legend.show { opacity: 1; }
+@media (max-width: 760px) {
+  .forest-mount { left: 0; right: 0; top: 30vh; bottom: 20vh; }
+  .forest .tool-row { left: 4vw; right: 4vw; bottom: 76px; }
+  .forest .legend { display: none; }
+  .forest .comic { left: 4vw !important; right: auto !important; top: 12vh !important; bottom: auto !important; }
+}
 .forest .legend i { display: block; width: 120px; height: 10px; border-radius: 3px; border: 1.5px solid var(--ink); }
 `;
 const GRAD_H = 'linear-gradient(90deg,#1d71b8,#951b81,#e30613,#ed6a21,#f9b233,#ffed00)';

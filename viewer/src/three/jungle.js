@@ -126,7 +126,17 @@ export async function createJungle(stage, { season: season0 = 'wet' } = {}) {
   const _p = new THREE.Vector3();
   // (before the first frame the camera's view matrix is still the identity:
   // update it too, or every projection comes out ~80 px low)
-  function fit(w, h) { if (h > 0 && Math.abs(camera.aspect - w / h) > 1e-4) { camera.aspect = w / h; camera.updateProjectionMatrix(); } camera.updateMatrixWorld(); }
+  function fit(w, h) {
+    if (h > 0 && Math.abs(camera.aspect - w / h) > 1e-4) {
+      camera.aspect = w / h;
+      // portrait (a phone): back off and widen so trunk, limb and cat stay in frame
+      const narrow = camera.aspect < 0.9;
+      camera.position.set(narrow ? 0.3 : 0.4, narrow ? 1.9 : 1.7, narrow ? 9.2 * Math.min(2.3, 1.05 / camera.aspect) : 9.2);
+      camera.lookAt(narrow ? 0.25 : 0.3, narrow ? 1.35 : 1.25, 0);
+      camera.updateProjectionMatrix();
+    }
+    camera.updateMatrixWorld();
+  }
   return {
     scene, camera,
     get season() { return season; },
@@ -139,6 +149,7 @@ export async function createJungle(stage, { season: season0 = 'wet' } = {}) {
     setSeason(s) { if (s !== season) { swap = { to: s, t: 0 }; } },
     inkColours,
     update(dt) {
+      fit(stage.size.w, stage.size.h);
       t += dt; uT.value = t;
       // the season swap: the cat vanishes in a puff (the scene draws it), reappears
       if (swap) { swap.t += dt; if (swap.t > 0.35 && season !== swap.to) { season = swap.to; idleT = 0; } if (swap.t > 0.7) swap = null; }

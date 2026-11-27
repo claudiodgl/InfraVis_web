@@ -28,7 +28,8 @@ const CSS = `
 .title-credit .unis img { width: 34px; height: 34px; border-radius: 50%; background: #fff; padding: 3px; box-sizing: border-box; object-fit: contain;
   box-shadow: 0 0 0 1.5px var(--ink-faint); opacity: 0; transform: scale(.4); animation: uni-pop .45s cubic-bezier(.3,1.5,.5,1) forwards; }
 @keyframes uni-pop { to { opacity: 1; transform: scale(1); } }
-@media (max-width: 760px) { .title-credit { flex-direction: column; gap: 8px; } .title-credit .sep { display: none; } .title-credit .unis img { width: 28px; height: 28px; } }
+@media (max-width: 760px) {
+  .title-name { font-size: 54px; } .title-q { font-size: 23px; } .title-btns .sk-btn { font-size: 18px; } .title-credit { flex-direction: column; gap: 8px; } .title-credit .sep { display: none; } .title-credit .unis img { width: 28px; height: 28px; } }
 `;
 
 export default function build(root, ctx) {

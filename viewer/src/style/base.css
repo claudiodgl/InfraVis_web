@@ -137,7 +137,7 @@ a { color: inherit; }
   font-family: var(--font-comic); font-size: 19px; cursor: pointer;
   transition: transform .15s, box-shadow .15s, background-color .6s, color .6s;
 }
-.sk-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow); }
+@media (hover: hover) { .sk-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow); } }
 .sk-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow); }
 .sk-btn.primary { background: var(--ink); color: var(--paper); }
 .sk-btn.ghost { box-shadow: none; border-style: dashed; background: transparent; }

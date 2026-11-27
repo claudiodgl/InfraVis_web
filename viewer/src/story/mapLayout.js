@@ -11,11 +11,11 @@ export async function loadSweden() {
 // the map fills the left part of the screen, as tall as it can be
 export function mapBox(W = innerWidth, H = innerHeight) {
   const narrow = W < 900;
-  const areaW = narrow ? W : W * 0.5, areaH = H * (narrow ? 0.62 : 0.84);
+  const areaW = narrow ? W * 0.94 : W * 0.5, areaH = H * (narrow ? 0.46 : 0.84);
   const s = Math.min(areaW / 420, areaH / 900);
   const w = 420 * s, h = 900 * s;
   const x = narrow ? (W - w) / 2 : W * 0.05 + (areaW - w) / 2 - W * 0.02;
-  const y = narrow ? H * 0.1 : H * 0.08;
+  const y = narrow ? H * 0.085 : H * 0.08;
   return { x, y, w, h, s };
 }
 

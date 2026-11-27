@@ -32,6 +32,8 @@ const CSS = `
 .logo-scene .tag.on { opacity: 1; }
 .logo-scene .cta { position: absolute; left: 50%; bottom: 10vh; transform: translateX(-50%); display: flex; gap: 14px; opacity: 0; transition: opacity .8s; z-index: 30; }
 .logo-scene .cta.on { opacity: 1; }
+.logo-scene .cta .sk-btn { white-space: nowrap; }
+@media (max-width: 760px) { .logo-scene .cta { bottom: 14vh; gap: 10px; } .logo-scene .cta .sk-btn { font-size: 16px; } .logo-scene .tag { font-size: 14px; padding: 0 6vw; } }
 .logo-scene .handoff { position: absolute; inset: 0; z-index: 40; pointer-events: none; }
 .logo-scene .handoff .bg { position: absolute; inset: 0; background: var(--s-bg); opacity: 0; transition: opacity .9s .3s; }
 .logo-scene .handoff .bg.in { opacity: 1; }
