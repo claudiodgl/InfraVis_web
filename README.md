@@ -81,6 +81,12 @@ any PC:
 - Animations that are not visible stop drawing; `prefers-reduced-motion`
   turns off the boiling lines, pen draw-ins and flights.
 
+## Online
+
+Every push to `main` builds the viewer and publishes it on GitHub Pages
+(`.github/workflows/pages.yml`): https://claudiodgl.github.io/InfraVis_web/
+(one-time setting: repository Settings → Pages → Source: *GitHub Actions*).
+
 ## Running
 
 Requirements: Node 22 (a portable copy works: this was built with
