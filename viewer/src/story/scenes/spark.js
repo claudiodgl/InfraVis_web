@@ -13,7 +13,7 @@ const CSS = `
 /* dark: the board is night, the firefly's light a lamp. light: the board is
    lost in a pale paper haze, and the firefly's light clears a warm window
    through it where the numbers show in ink */
-.spark-veil { position: absolute; inset: 0; pointer-events: none; transition: opacity 1.2s; }
+.spark-veil { position: absolute; inset: 0; pointer-events: none; transition: opacity 1.2s; z-index: 21; }
 :root[data-theme='dark'] .spark-veil {
   background: radial-gradient(circle var(--r, 170px) at var(--fx, 50%) var(--fy, 50%), transparent 0, transparent 35%, rgba(5, 6, 9, .88) 100%); }
 :root[data-theme='light'] .spark-veil {
@@ -22,8 +22,13 @@ const CSS = `
 .spark-veil.off { opacity: 0; }
 /* centred with translate (not transform: the button's hover sets transform,
    which undid the centring, moved it from under the pointer, and flickered) */
-.spark-btn { position: absolute; left: 50%; bottom: 120px; translate: -50% 0; z-index: 22; opacity: 0; transition: opacity .6s, transform .15s, box-shadow .15s; }
-.spark-btn.show { opacity: 1; }
+/* the button is HIDDEN in the dark, somewhere on the board: under the veil,
+   it shows only where the firefly's light falls (and stays once found) */
+.spark-btn { position: absolute; translate: -50% -50%; z-index: 20; transition: transform .15s, box-shadow .15s; }
+.spark-btn:not(.found) { opacity: .4; }   /* (through the veil: barely there until the light falls on it) */
+.spark-btn.found { z-index: 24; animation: spark-found 1.6s ease-in-out infinite; }
+@keyframes spark-found { 50% { box-shadow: 3px 3px 0 var(--shadow), 0 0 0 9px var(--glow-soft); } }
+.spark-btn.gone { opacity: 0; pointer-events: none; transition: opacity .5s; }
 .spark .comic.caption { z-index: 23; }
 `;
 
@@ -65,6 +70,11 @@ export default function build(root, ctx) {
   const veil = el('div', { class: 'spark-veil' }, root);
   const g = cv.getContext('2d');
   const btn = el('button', { class: 'sk-btn primary spark-btn', type: 'button' }, root, '✦ Visualize it');
+  // hidden in one of a few dark corners, away from the boxes and the middle
+  const SPOTS = [[0.82, 0.72], [0.18, 0.78], [0.86, 0.42], [0.62, 0.84], [0.3, 0.6]];
+  const spot = SPOTS[Math.floor(Math.random() * SPOTS.length)];
+  btn.style.left = `${spot[0] * 100}%`; btn.style.top = `${spot[1] * 100}%`;
+  let found = false;
 
   const c1 = comic(root, { kind: 'caption', html: 'Every day, science produces more data than anyone could ever read.', at: { left: '6vw', top: '20vh' }, width: 330 });
   // the firefly's line follows the board: night in dark mode, haze on paper in light mode
@@ -72,7 +82,7 @@ export default function build(root, ctx) {
   const c2 = comic(root, { kind: 'speech', html: lineFor(), at: { left: '50%', top: '55%' }, width: 280, tail: 'top', tailAt: 30 });
   const offTheme = theme.onChange(() => c2.set(lineFor()));
   let boxX = innerWidth / 2, boxY = innerHeight * 0.55;
-  const c3 = comic(root, { kind: 'caption', html: 'Up close, it\'s just numbers. The pattern is in there, but numbers alone won\'t show it.', at: { right: '6vw', top: '20vh' }, width: 330, tilt: 0.8 });
+  const c3 = comic(root, { kind: 'caption', html: 'Up close, it\'s just numbers. The pattern is in there, but numbers alone won\'t show it. <b>Somewhere in the dark there\'s a way to see it: find it.</b>', at: { right: '6vw', top: '20vh' }, width: 330, tilt: 0.8 });
   const c4 = comic(root, { kind: 'caption', html: 'Put every value where it belongs, and the pattern appears. <b>This is what visualization does.</b>', at: { left: '6vw', top: '20vh' }, width: 360 });
   const c5 = comic(root, { kind: 'speech', html: 'This one is a tree, made of laser measurements. Shall we see the whole forest?', at: { right: '7vw', bottom: '24vh' }, width: 300, tail: 'right', tailAt: 30 });
 
@@ -106,7 +116,7 @@ export default function build(root, ctx) {
   btn.addEventListener('click', async () => {
     if (phase !== 'dark') return;
     ctx.stepDone('visualize');
-    phase = 'gather'; btn.classList.remove('show'); c2.hide(); c3.hide(); c1.hide();
+    phase = 'gather'; btn.classList.add('gone'); c2.hide(); c3.hide(); c1.hide();
     ctx.firefly.follow(false);
     veil.classList.add('off');
     const tb = treeBox();
@@ -126,7 +136,7 @@ export default function build(root, ctx) {
     phase = 'dark'; morph = 0; settled = false;
     veil.classList.remove('off');
     c4.hide(); c5.hide(); c3.show();
-    btn.classList.add('show');
+    btn.classList.remove('gone');
     ctx.firefly.land(false); ctx.firefly.follow(true);
   }
   return {
@@ -157,8 +167,11 @@ export default function build(root, ctx) {
       if (phase === 'dark') {
         seen.add(`${Math.floor(lx / (W / 8))},${Math.floor(ly / (H / 6))}`);
         explored = seen.size / 48;
-        if ((explored > 0.22 || timeIn > 9) && !btn.classList.contains('show')) {
-          btn.classList.add('show'); c2.hide(); c3.show();
+        if ((explored > 0.15 || timeIn > 7) && !c3.el.classList.contains('show') && !found) { c2.hide(); c3.show(); }
+        // found: the light has fallen on it, it comes out of the dark and stays
+        const br = btn.getBoundingClientRect(), b0 = root.getBoundingClientRect();
+        if (!found && Math.hypot(br.left + br.width / 2 - b0.left - lx, br.top + br.height / 2 - b0.top - ly) < 120) {
+          found = true; btn.classList.add('found'); c2.hide();
         }
       }
       if (phase === 'gather') { morph = Math.min(1, morph + dt / 2.6); if (morph >= 1) phase = 'done'; }
