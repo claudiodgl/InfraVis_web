@@ -48,6 +48,25 @@ export async function createFirefly3D() {
   model.position.sub(box.getCenter(new THREE.Vector3()));
   const pivot = new THREE.Group(); pivot.add(model); scene.add(pivot);
 
+  // THE SILHOUETTE, drawn by the renderer itself (not a CSS filter over the
+  // canvas, which phone browsers render unreliably): every material mixes its
+  // final colour toward one flat tone by uTone (0 = its own colours, 1 = the
+  // silhouette), alpha kept — the same look on every device
+  const toneU = { uTone: { value: 0 }, uToneColor: { value: new THREE.Color(1, 1, 1) } };
+  let toneWant = 0;
+  const toned = new Set();   // (materials are shared between meshes: once each)
+  const addTone = (m) => {
+    if (toned.has(m)) return; toned.add(m);
+    const prev = m.onBeforeCompile;
+    m.onBeforeCompile = (sh, r) => {
+      prev?.(sh, r);
+      sh.uniforms.uTone = toneU.uTone; sh.uniforms.uToneColor = toneU.uToneColor;
+      sh.fragmentShader = 'uniform float uTone;\nuniform vec3 uToneColor;\n' + sh.fragmentShader.replace('#include <dithering_fragment>',
+        '#include <dithering_fragment>\n  gl_FragColor.rgb = mix(gl_FragColor.rgb, uToneColor, uTone);');
+    };
+    m.customProgramCacheKey = () => 'ff-tone';
+    m.needsUpdate = true;
+  };
   // the lantern: the body material carries the emissive map; pulse it
   const glowMats = [];
   model.traverse((o) => {
@@ -56,6 +75,7 @@ export async function createFirefly3D() {
     const m = o.material;
     if (m.emissiveMap) { m.emissive = new THREE.Color(1, 0.86, 0.35); glowMats.push(m); }
     if (/wing/i.test(m.name)) { m.side = THREE.DoubleSide; m.depthWrite = false; }
+    addTone(m);
   });
 
   // its own two clips, one at a time: 'Landed_Fly' while it travels,
@@ -117,6 +137,8 @@ export async function createFirefly3D() {
   return {
     canvas, SIZE, feet,
     setGlow(g) { glow = g; },
+    // tone: null = its own colours; a colour (CSS) = the flat silhouette, faded in
+    setTone(css) { if (css) { toneU.uToneColor.value.set(css);   /* (mixed after the output conversion: the colour as-is) */ toneWant = 1; } else toneWant = 0; },
     update(dt, { vx = 0, vy = 0, moving = false, perched = false, depth = 0 } = {}) {
       t += dt;
       const speed = Math.hypot(vx, vy);
@@ -145,7 +167,8 @@ export async function createFirefly3D() {
       pivot.rotation.set(pitch, yaw, bank, 'YXZ');
       fly.timeScale = 1 + Math.min(speed * 0.04, 1);
       mixer.update(dt);
-      const g = glow * (1.3 + Math.sin(t * 2.4) * 0.6);
+      toneU.uTone.value += (toneWant - toneU.uTone.value) * (1 - Math.exp(-dt * 2.4));   // (~1.5 s fade)
+      const g = glow * (1.3 + Math.sin(t * 2.4) * 0.6) * (1 - toneU.uTone.value);
       for (const m of glowMats) m.emissiveIntensity = g;
       renderer.render(scene, camera);
     },

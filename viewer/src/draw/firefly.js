@@ -61,15 +61,10 @@ const CSS = `
   /* a white edge traced round the rendered silhouette (the 3D render is left
      as it is). Every state below uses the same list of filter functions, so
      the change into the blended silhouette is animated, not a jump. */
-  filter: brightness(1) invert(0) sepia(0) drop-shadow(0 0 .6px #fff) drop-shadow(0 0 .6px #fff) drop-shadow(0 0 .4px #fff);
-  transition: filter 1.6s ease; }
-:root[data-theme='dark'] .ff-canvas { filter: brightness(1) invert(0) sepia(0) drop-shadow(0 0 .8px #fff) drop-shadow(0 0 .8px #fff) drop-shadow(0 0 .8px #fff); }
-/* blended: a solid silhouette in the theme's ink — the colour of the birds in
-   the scene (black on paper, chalk-white on the blackboard), its glow put out */
-:root[data-theme='light'] .ff.blend .ff-canvas { filter: brightness(0) invert(0) sepia(0) drop-shadow(0 0 .6px rgba(255,255,255,0)) drop-shadow(0 0 .6px rgba(255,255,255,0)) drop-shadow(0 0 .4px rgba(255,255,255,0)); }
-:root[data-theme='dark'] .ff.blend .ff-canvas { filter: brightness(0) invert(.92) sepia(.12) drop-shadow(0 0 .8px rgba(0,0,0,0)) drop-shadow(0 0 .8px rgba(0,0,0,0)) drop-shadow(0 0 .8px rgba(0,0,0,0)); }
-.ff.blend.tone-white .ff-canvas { filter: brightness(0) invert(.95) sepia(.08) drop-shadow(0 0 .8px rgba(0,0,0,0)) drop-shadow(0 0 .8px rgba(0,0,0,0)) drop-shadow(0 0 .8px rgba(0,0,0,0)) !important; }
-.ff.blend.tone-black .ff-canvas { filter: brightness(0) invert(0) sepia(0) drop-shadow(0 0 .6px rgba(255,255,255,0)) drop-shadow(0 0 .6px rgba(255,255,255,0)) drop-shadow(0 0 .4px rgba(255,255,255,0)) !important; }
+  filter: drop-shadow(0 0 .6px #fff) drop-shadow(0 0 .6px #fff) drop-shadow(0 0 .4px #fff); }
+:root[data-theme='dark'] .ff-canvas { filter: drop-shadow(0 0 .8px #fff) drop-shadow(0 0 .8px #fff) drop-shadow(0 0 .8px #fff); }
+/* the silhouette has no white edge (it is the edge) */
+.ff.blend .ff-canvas { filter: none !important; }
 .ff .ff-svg { transition: opacity 1.4s ease; }
 .ff.blend .ff-svg { opacity: 0; }
 .ff.has3d .ff-svg { position: absolute; inset: 0; }
@@ -105,7 +100,16 @@ export function createFirefly() {
   let following = false, pointer = { x: innerWidth / 2, y: innerHeight / 2 };
   let home = { x: pos.x, y: pos.y }, face = 1, time = 0, glowLevel = 1;
   let skin = null, depth = 0, vy = 0, perched = false, size = 0.55, blendWanted = false;
-  let startleToken = 0, lastStartle = 0, startling = false;   // (a hop away from the pointer, and back)   // (small in the story: it guides, it should not distract)   // size: 1 in the story, smaller on the website
+  let startleToken = 0, lastStartle = 0, startling = false, toneName = null;
+  // the silhouette's colour: white / black on request, else the theme's ink
+  // (black on paper, chalk on the blackboard), rendered by the 3D skin itself
+  function applyTone() {
+    if (!skin) return;
+    if (!blendWanted) { skin.setTone(null); return; }
+    const c = toneName === 'white' ? '#f2efe8' : toneName === 'black' ? '#1f1d24' : (theme.mode === 'dark' ? '#efeae0' : '#1f1d24');
+    skin.setTone(c);
+  }
+  theme.onChange(() => applyTone());   // (a hop away from the pointer, and back)   // (small in the story: it guides, it should not distract)   // size: 1 in the story, smaller on the website
   let loading = 0;   // >0: looping in place while a scene loads
   const dots = [];            // trail points {x, y, age}
   let dpr = 1;
@@ -165,6 +169,7 @@ export function createFirefly() {
     // the 3D skin (three/firefly3d.js), the only body shown
     attach(s) {
       skin = s;
+      applyTone();
       // the 3D body is bigger than the drawn one: its glow moves back to its lantern
       halo.setAttribute('cx', -34); halo.setAttribute('cy', 4); halo.setAttribute('r', 44);
       const box = node.querySelector('.ff-svg');
@@ -181,7 +186,7 @@ export function createFirefly() {
     setSize(k) { size = k; },
     // step back: blend into the board while it rests (it comes back when it flies)
     // (it applies at once — also in flight — and lasts until blend(false))
-    blend(on = true) { blendWanted = on; node.classList.toggle('blend', on); },
+    blend(on = true) { blendWanted = on; node.classList.toggle('blend', on); applyTone(); },
     // px from its centre down to its feet (the 3D model's), at the current size
     // STARTLED: the pointer came close while it sat — it hops up and aside,
     // hovers a moment, and comes back to land on the very same spot
@@ -197,7 +202,7 @@ export function createFirefly() {
     },
     // the silhouette's tone, when the surface asks for it: 'white' on a dark
     // surface (the site's black header), 'black' on a light one, null = the theme's ink
-    tone(t) { node.classList.toggle('tone-white', t === 'white'); node.classList.toggle('tone-black', t === 'black'); },
+    tone(t) { toneName = t; applyTone(); },
     get feet() { return (skin ? skin.feet.dy : 41) * size; },
     // how far its feet sit ahead of its centre, toward where it faces (px, current size)
     get feetDX() { return skin ? skin.feet.dx * size * skin.side : 0; },

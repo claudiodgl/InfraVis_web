@@ -51,11 +51,13 @@
   .story-top { padding: 10px 4vw; }
   .story-skip { display: none; }
   .scene .chapter-tag { top: 52px; left: 4vw; font-size: 18px; }
-  .story-nav { bottom: 12px; column-gap: 8px; }
+  /* a phone: Back, the dots, then Next filling the rest (positions still fixed) */
+  .story-nav { bottom: 12px; column-gap: 8px; grid-template-columns: auto auto minmax(0, 1fr); padding: 0 3vw; }
+  .story-nav .nav-next { justify-self: stretch; max-width: none !important; text-align: center; justify-content: center; min-width: 0; }
   .nav-dots { gap: 5px; }
   .nav-dots button { width: 12px; height: 12px; }
   .nav-back { width: 40px; padding: .35em .5em; }
-  .nav-next { font-size: 15px; padding: .45em .8em; max-width: 52vw; overflow: hidden; text-overflow: ellipsis; }
+  .nav-next { font-size: 15px; padding: .45em .8em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block !important; }
   .comic { font-size: 15px; max-width: 88vw !important; padding: 10px 13px 11px; box-shadow: 3px 3px 0 var(--shadow); }
   .tool-row .sk-btn { font-size: 14px; padding: .3em .7em .35em; }
   .hint { display: none; }

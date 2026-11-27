@@ -17,7 +17,8 @@ the story is told in short comic boxes.
 | 2 | A forest of points | ForestVis · LNU | turn a 3D LiDAR-style plot; colour by height / NDVI; pick trees |
 | 3 | Into the Amazon | Amazon from within · LNU | opens with a bridge from the ForestVis sketch: the light conifers un-draw while rainforest trees and vines draw in and the water rises (while the jaguar loads); then the project's 3D jaguar: on a limb in the wet season, on the forest floor (looking round, licking) in the dry one; terns crossing |
 | 4 | Nine nodes, one infrastructure | all 43 projects on infravis.se | the collaboration network on a hand-drawn Sweden: nodes are the universities' emblems, sized by their projects; edges as thick as the projects two nodes share; hover a project, node or edge to light up its part of the network, click a project for its card |
-| 5 | InfraVis | — | the nodes fly into the nine circles of the logo, it draws itself, the firefly lands on the yellow tip; *Enter InfraVis*: the website's bar slides in and the logo flies from the middle of the screen into its slot in the header |
+| 5 | Your project next | InfraVis user support (infravis.se/services-resources) | the turn to the visitor: three steps drawn one by one — ask (help desk, free, first answer within three hours), meet an expert (mid-level, free, up to ~80 h), build it together (in-depth: annual call 300 SEK/h, otherwise 600 SEK/h) — and *Apply for support* / info@infravis.se |
+| 6 | InfraVis | — | the nodes fly into the nine circles of the logo, it draws itself, the firefly lands on the yellow tip; *Enter InfraVis*: the website's bar slides in and the logo flies from the middle of the screen into its slot in the header |
 
 Cut for length (kept in `viewer/src/story/scenes/`, one line each in
 `story.js` to bring back): *Small things, big data* (Buzz Pollination,
@@ -58,6 +59,16 @@ viewer/      Vite app (src/), shot.mjs (headless screenshots through Edge)
   src/data/           nodes, projects, people (generated)
   src/ui/             comic boxes, credits (faces, node badges), project mini-animations
 ```
+
+## Phones
+
+Every chapter and the website have a phone layout (`@media (max-width: 760px)`
+in each scene's CSS, `site.css`): text on top and the 3D or map below, smaller
+boxes and buttons, touch instead of hover (a finger leads the firefly, taps
+replace hovers, the carousel swipes). The firefly's white/black silhouette is
+rendered by the 3D shader itself, so it looks the same on every device. Any
+change to the desktop version gets its phone equivalent, checked with
+`node shot.mjs <hash> out.png size:390x844 mobile:1`.
 
 ## Performance
 

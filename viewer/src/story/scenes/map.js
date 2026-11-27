@@ -340,11 +340,11 @@ export default function build(root, ctx) {
   // Next walks through a few collaborations, one project at a time
   const tour = ['genomelens', 'past-platsen', 'truth-is-in', 'forestvis'].map((k) => LIST.find((p) => p.id.includes(k))).filter(Boolean);
   return {
-    next: 'See it come together ⟶',
+    next: 'Your project next ⟶',
     steps: [
       { key: 'grow', label: 'How it grew', run: () => play(), undo: () => { stopPlay(); setYear(YEARS[YEARS.length - 1]); } },
       ...tour.map((p, k) => ({ key: p.id, label: `Show: ${p.short}`,
-      undo: () => { if (k > 0) { select(tour[k - 1]); } else { sel = null; rowEls.forEach((r) => r.classList.remove('sel')); clearHover(); } }, run: () => { select(p); rowEls.get(p.id)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } }))],
+      undo: () => { if (k > 0) { select(tour[k - 1]); } else { sel = null; rowEls.forEach((r) => r.classList.remove('sel')); clearHover(); } }, run: () => { select(p); { const r = rowEls.get(p.id); if (r) plist.scrollTo({ top: r.offsetTop - plist.clientHeight / 2, behavior: 'smooth' }); } } }))],
     stepReady: () => panel.classList.contains('show'),
     async enter() {
       await drawMap();

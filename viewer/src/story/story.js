@@ -24,12 +24,16 @@ export const SCENES = [
   // (cut for length, 2026-11-27; kept in scenes/ to bring back:
   //  'pollinators' Small things, big data · 'darkness' Darkness matters)
   { id: 'map', chapter: 'Nine nodes, one infrastructure', load: () => import('./scenes/map.js') },
+  { id: 'next', chapter: 'Your project next', load: () => import('./scenes/next.js') },
   { id: 'logo', chapter: 'InfraVis', fade: true, load: () => import('./scenes/logo.js') },
 ];
 
 export function createStory(app, { firefly, onSite }) {
   const shell = el('div', { class: 'story board' }, app);
   const track = el('div', { class: 'story-track' }, shell);
+  // the frame never scrolls (a "scroll into view" could nudge it sideways on a phone)
+  const pin = (e) => { const t = e.target; if (t && (t === shell || t === track || t.classList?.contains('scene')) && (t.scrollLeft || t.scrollTop)) { t.scrollLeft = 0; t.scrollTop = 0; } };
+  shell.addEventListener('scroll', pin, true);
 
   // chrome: brand, skip, theme, and the bottom navigation
   const top = el('div', { class: 'story-top' }, shell);
