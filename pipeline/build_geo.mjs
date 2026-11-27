@@ -49,11 +49,36 @@ const NODES = {
   lu: [13.204, 55.712],     // Lund
 };
 
+// A GENTLE DISTORTION so the network reads: the nodes crowd in the south
+// (Gothenburg holds two, Uppsala and Stockholm are 60 km apart). Each node
+// is moved to a spread-out spot, and the map is warped smoothly with it —
+// every point moves by a Gaussian-weighted blend of the nodes' moves — so
+// coastline and nodes stay together and the shape stays recognisable.
+const real = Object.fromEntries(Object.entries(NODES).map(([k, ll]) => [k, proj(ll)]));
+const SPREAD = {   // where each node should sit (map units, 420 x 900)
+  umu: [302, 330], miun: [212, 448], uu: [222, 572], kth: [290, 640], liu: [186, 694],
+  gu: [78, 700], chalmers: [38, 770], lnu: [168, 792], lu: [100, 866],
+};
+const SIGMA = 46;
+const moves = Object.entries(real).map(([k, [x, y]]) => ({ x, y, dx: SPREAD[k][0] - x, dy: SPREAD[k][1] - y }));
+function warp(x, y) {
+  let wx = 0, wy = 0, ws = 0;
+  for (const m of moves) {
+    const w = Math.exp(-((x - m.x) ** 2 + (y - m.y) ** 2) / (2 * SIGMA * SIGMA));
+    wx += w * m.dx; wy += w * m.dy; ws += w;
+  }
+  const k = ws > 1 ? 1 / ws : 1;   // (where nodes overlap, blend their moves rather than add them)
+  return [x + wx * k, y + wy * k];
+}
+const warpPath = (d) => d.replace(/(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g, (_, a, b) => warp(+a, +b).map((v) => v.toFixed(1)).join(','));
+
 const out = {
   viewBox: [0, 0, W, H],
-  sweden: pathOf(bigParts(sweden, 4)),
-  neighbours: [578, 246, 208].map((id) => pathOf(pick(a110, id))).join(''),
-  nodes: Object.fromEntries(Object.entries(NODES).map(([k, ll]) => [k, proj(ll).map((v) => +v.toFixed(1))])),
+  sweden: warpPath(pathOf(bigParts(sweden, 4))),
+  neighbours: warpPath([578, 246, 208].map((id) => pathOf(pick(a110, id))).join('')),
+  // the nodes sit exactly on their spread-out spots (two of them share a
+  // city, so the warp alone cannot part them; the map bends round them)
+  nodes: Object.fromEntries(Object.keys(real).map((k) => [k, SPREAD[k]])),
 };
 const dir = path.join(root, 'static', 'lib', 'geo');
 fs.mkdirSync(dir, { recursive: true });

@@ -334,10 +334,10 @@ export default function build(root, ctx) {
     stepReady: () => panel.classList.contains('show'),
     async enter() {
       await drawMap();
-      await zoomIn();
       c1.show();
       drawNodes();
       await sleep(1700);
+      await zoomIn();   // (after all nine nodes are on the map)
       c2.show();
       await drawEdges();
       await sleep(1600);

@@ -20,7 +20,7 @@ export function mapBox(W = innerWidth, H = innerHeight) {
 }
 
 // Chalmers and GU share Gothenburg, Uppsala and Stockholm are close: drawn a little apart
-export const NUDGE = { chalmers: [-16, 14], gu: [14, -16], uu: [-18, -22], kth: [16, 14] };
+export const NUDGE = {};   // (no longer needed: the baked map spreads the nodes, pipeline/build_geo.mjs)
 export function nodeXY(g, id) {
   const [x, y] = g.nodes[id], [dx, dy] = NUDGE[id] || [0, 0];
   return [x + dx, y + dy];
