@@ -1,0 +1,167 @@
+/* InfraVis story + site: shared tokens, the whiteboard / blackboard, comic boxes.
+   Brand: Lato (InfraVis's typeface) and the logo's rainbow gradient. */
+
+:root {
+  --iv-blue: #1d71b8;
+  --iv-purple: #951b81;
+  --iv-red: #e30613;
+  --iv-orange: #ed6a21;
+  --iv-amber: #f9b233;
+  --iv-yellow: #ffed00;
+  --iv-gradient: linear-gradient(60deg, #1d71b8 8%, #951b81 30%, #e30613 50%, #ed6a21 70%, #f9b233 85%, #ffed00 100%);
+
+  --font-ui: 'Lato', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Segoe Print', cursive;
+  --font-comic: 'Patrick Hand', 'Comic Sans MS', cursive;
+
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+}
+
+/* light: a whiteboard, black marker */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --paper: #f7f4ec;
+  --paper-2: #efeadf;
+  --ink: #1f1d24;
+  --ink-soft: #6c6875;
+  --ink-faint: rgba(31, 29, 36, .13);
+  --box: #fffdf7;
+  --box-caption: #fff3b8;
+  --glow: #f6b500;
+  --glow-soft: rgba(246, 181, 0, .35);
+  --shadow: rgba(31, 29, 36, .9);
+  --grid: rgba(31, 29, 36, .045);
+}
+
+/* dark: a blackboard, chalk */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #15171d;
+  --paper-2: #1c1f27;
+  --ink: #ece7dc;
+  --ink-soft: #a29dab;
+  --ink-faint: rgba(236, 231, 220, .14);
+  --box: #20232c;
+  --box-caption: #3a3217;
+  --glow: #ffd84a;
+  --glow-soft: rgba(255, 216, 74, .4);
+  --shadow: rgba(0, 0, 0, .85);
+  --grid: rgba(236, 231, 220, .035);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--paper); color: var(--ink); font-family: var(--font-ui); }
+body { transition: background-color .6s var(--ease-io), color .6s var(--ease-io); }
+button { font: inherit; color: inherit; }
+img, svg, canvas { -webkit-user-drag: none; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--iv-orange); outline-offset: 3px; }
+
+/* the board: faint grid, like a whiteboard's printed squares */
+.board {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ink lines: SVG drawn in the theme's ink */
+.ink { stroke: var(--ink); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ink-fill { fill: var(--ink); }
+.ink-soft { stroke: var(--ink-soft); }
+
+/* ---------- COMIC BOXES ---------- */
+/* hand-drawn border: uneven radii, a flat offset shadow (gibi style) */
+.comic {
+  position: absolute;
+  max-width: min(360px, 80vw);
+  padding: 14px 18px 15px;
+  background: var(--box);
+  color: var(--ink);
+  border: 2.5px solid var(--ink);
+  border-radius: 18px 6px 16px 5px / 6px 16px 5px 18px;
+  box-shadow: 5px 5px 0 var(--shadow);
+  font-family: var(--font-comic);
+  font-size: clamp(17px, 1.35vw, 21px);
+  line-height: 1.28;
+  opacity: 0;
+  transform: translateY(8px) scale(.96) rotate(var(--tilt, -.6deg));
+  transition: opacity .45s var(--ease-out), transform .55s var(--ease-out), background-color .6s, color .6s, border-color .6s;
+  pointer-events: none;
+  z-index: 20;
+}
+.comic.show { opacity: 1; transform: translateY(0) scale(1) rotate(var(--tilt, -.6deg)); pointer-events: auto; }
+.comic b, .comic strong { font-weight: normal; background: linear-gradient(transparent 58%, var(--glow-soft) 58%); }
+.comic .who { display: block; font-family: var(--font-hand); font-weight: 700; font-size: 1.15em; color: var(--ink-soft); margin-bottom: 2px; }
+.comic .small { display: block; font-size: .8em; color: var(--ink-soft); margin-top: 6px; }
+/* narration caption: square, yellow, like a comic's narrator box */
+.comic.caption { background: var(--box-caption); border-radius: 3px 2px 4px 2px; --tilt: .4deg; }
+/* speech: a tail pointing at whoever speaks (the firefly). --tail-x / side set per box */
+.comic.speech::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  background: inherit;
+  border-right: 2.5px solid var(--ink);
+  border-bottom: 2.5px solid var(--ink);
+  left: var(--tail-x, 28px);
+  bottom: -11px;
+  transform: rotate(45deg) skew(12deg, 12deg);
+}
+.comic.speech.tail-top::after { bottom: auto; top: -11px; transform: rotate(225deg) skew(12deg, 12deg); }
+.comic.speech.tail-left::after { left: -11px; top: var(--tail-y, 24px); bottom: auto; transform: rotate(135deg) skew(12deg, 12deg); }
+.comic.speech.tail-right::after { left: auto; right: -11px; top: var(--tail-y, 24px); bottom: auto; transform: rotate(-45deg) skew(12deg, 12deg); }
+/* words appear one by one */
+.comic .w { opacity: 0; transition: opacity .25s; }
+.comic .w.on { opacity: 1; }
+
+/* hand-lettered titles */
+.hand { font-family: var(--font-hand); font-weight: 700; }
+.chapter-tag {
+  position: absolute; left: 4vw; top: 3.2vh;
+  font-family: var(--font-hand); font-size: clamp(20px, 1.8vw, 28px); color: var(--ink-soft);
+  z-index: 15;
+}
+.chapter-tag b { color: var(--ink); font-weight: 700; }
+
+/* sketchy button */
+.sk-btn {
+  display: inline-flex; align-items: center; gap: .5em;
+  padding: .55em 1.1em .6em;
+  background: var(--box); color: var(--ink);
+  border: 2.5px solid var(--ink);
+  border-radius: 14px 5px 12px 4px / 5px 12px 4px 14px;
+  box-shadow: 3px 3px 0 var(--shadow);
+  font-family: var(--font-comic); font-size: 19px; cursor: pointer;
+  transition: transform .15s, box-shadow .15s, background-color .6s, color .6s;
+}
+.sk-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow); }
+.sk-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow); }
+.sk-btn.primary { background: var(--ink); color: var(--paper); }
+.sk-btn.ghost { box-shadow: none; border-style: dashed; background: transparent; }
+.sk-btn[aria-pressed='true'] { background: var(--box-caption); }
+
+/* theme switch: sun <-> crescent moon */
+.iv-theme-btn {
+  width: 40px; height: 40px; padding: 7px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--box); border: 2px solid var(--ink); cursor: pointer; color: var(--ink);
+  box-shadow: 2px 2px 0 var(--shadow); transition: transform .15s, background-color .6s;
+}
+.iv-theme-btn:hover { transform: rotate(-8deg); }
+.iv-theme-btn svg { width: 100%; height: 100%; overflow: visible; }
+.iv-theme-btn .core { fill: currentColor; transition: r .5s cubic-bezier(.3,1.4,.5,1); }
+.iv-theme-btn .bite { transition: cx .5s cubic-bezier(.65,0,.35,1), cy .5s cubic-bezier(.65,0,.35,1); }
+.iv-theme-btn .rays { stroke: currentColor; stroke-width: 2; stroke-linecap: round; transform-origin: 12px 12px; transition: transform .5s cubic-bezier(.65,0,.35,1), opacity .35s; }
+:root[data-theme='light'] .iv-theme-btn .core { r: 5px; }
+:root[data-theme='light'] .iv-theme-btn .bite { cx: 26px; cy: -2px; }
+:root[data-theme='dark'] .iv-theme-btn .core { r: 8.5px; }
+:root[data-theme='dark'] .iv-theme-btn .bite { cx: 17px; cy: 7px; }
+:root[data-theme='dark'] .iv-theme-btn .rays { opacity: 0; transform: rotate(45deg) scale(.4); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; }
+}

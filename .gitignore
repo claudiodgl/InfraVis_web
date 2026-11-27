@@ -1,0 +1,9 @@
+node_modules/
+viewer/dist/
+*.log
+# original portraits (15 MB, people's photos from infravis.se): kept locally, re-fetch from image_url in people.json
+assets/portraits/*.jpg
+assets/portraits/*.jpeg
+assets/portraits/*.png
+assets/portraits/*.webp
+assets/portraits/*.gif

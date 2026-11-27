@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Firefly lab</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #f7f4ec; font: 14px system-ui; }
+  body.dark { background: #15171d; color: #eee; }
+  #c { width: 100%; height: 100%; display: block; }
+  .ui { position: fixed; left: 12px; top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .ui button { padding: 6px 10px; }
+  .info { position: fixed; left: 12px; bottom: 12px; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="ui">
+  <button data-clip="0">clip 0</button><button data-clip="1">clip 1</button>
+  <button data-yaw="0">front</button><button data-yaw="90">side</button><button data-yaw="180">back</button><button data-yaw="-35">3/4</button>
+  <button id="dark">dark</button>
+</div>
+<div class="info" id="info"></div>
+<script type="module">
+// a bench for the guide's 3D body: its clips, from every side, in both themes
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const canvas = document.getElementById('c');
+const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+r.setPixelRatio(Math.min(devicePixelRatio, 2));
+r.toneMapping = THREE.ACESFilmicToneMapping;
+const scene = new THREE.Scene();
+scene.environment = new THREE.PMREMGenerator(r).fromScene(new RoomEnvironment(), 0.04).texture;
+const cam = new THREE.PerspectiveCamera(30, 1, 0.01, 10);
+cam.position.set(0, 0.08, 0.75); cam.lookAt(0, 0, 0);
+const g = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('./lib/animals/firefly.glb');
+const m = g.scene; const box = new THREE.Box3().setFromObject(m); m.position.sub(box.getCenter(new THREE.Vector3()));
+const pivot = new THREE.Group(); pivot.add(m); scene.add(pivot);
+const mixer = new THREE.AnimationMixer(m);
+let act = null;
+function play(i) { act?.stop(); act = mixer.clipAction(g.animations[i]); act.play(); document.getElementById('info').textContent = g.animations.map((a, k) => `${k}: ${a.name} (${a.duration.toFixed(2)} s)`).join(' · ') + ` — playing ${i}`; }
+play(+(new URLSearchParams(location.search).get('clip') ?? 1));
+pivot.rotation.y = THREE.MathUtils.degToRad(+(new URLSearchParams(location.search).get('yaw') ?? 0));
+document.querySelectorAll('[data-clip]').forEach((b) => b.onclick = () => play(+b.dataset.clip));
+document.querySelectorAll('[data-yaw]').forEach((b) => b.onclick = () => { pivot.rotation.y = THREE.MathUtils.degToRad(+b.dataset.yaw); });
+document.getElementById('dark').onclick = () => document.body.classList.toggle('dark');
+const clock = new THREE.Clock();
+function frame() {
+  const w = innerWidth, h = innerHeight; if (canvas.width !== Math.round(w * r.getPixelRatio())) { r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+  mixer.update(clock.getDelta()); r.render(scene, cam); requestAnimationFrame(frame);
+}
+frame();
+window.__lab = { pivot, mixer, g };
+</script>
+</body>
+</html>

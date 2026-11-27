@@ -1,0 +1,557 @@
+[
+  {
+    "name": "Anders Ynnerman",
+    "role": "Chairman",
+    "file": "anders-ynnerman.png",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Professor of Scientific Visualization",
+    "groups": [
+      "InfraVis Steering Committee",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/anders-ynnerman/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/06/avator-AndersYnnerman.png"
+  },
+  {
+    "name": "Cecilia Martinsson Björkdahl",
+    "role": "Steering Committee",
+    "file": "cecilia-martinsson-bjorkdahl.jpg",
+    "university_id": null,
+    "affiliation_text": "Karolinska Institutet Head of Unit, Compliance and Data Office",
+    "groups": [
+      "InfraVis Steering Committee"
+    ],
+    "profile_url": "https://infravis.se/cecilia-martinsson-bjorkdahl-2/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/06/Avd-forskarstod-Cecilia-Martinsson-Bjorkdahl_s-scaled.jpg"
+  },
+  {
+    "name": "Eva Wirström",
+    "role": "Steering Committee",
+    "file": "eva-wirstrom.jpg",
+    "university_id": "chalmers",
+    "affiliation_text": "Chalmers University Associate professor at the Astronomy and Plasma Physics division",
+    "groups": [
+      "InfraVis Steering Committee"
+    ],
+    "profile_url": "https://infravis.se/eva-wirstrom/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/06/EvaProfilePic-scaled.jpg"
+  },
+  {
+    "name": "Karin Danielsson",
+    "role": "Steering Committee Member",
+    "file": "karin-danielsson.png",
+    "university_id": "umu",
+    "affiliation_text": "Umeå University Director of Humlab",
+    "groups": [
+      "InfraVis Steering Committee",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/karin-danielsson/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/06/avator-KarinDanielsson.png"
+  },
+  {
+    "name": "Melvyn B. Davies",
+    "role": "Steering Committee Member",
+    "file": "melvyn-b-davies.png",
+    "university_id": "lu",
+    "affiliation_text": "Lund University Professor of Astronomy",
+    "groups": [
+      "InfraVis Steering Committee",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/melvyn-b-davies/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/06/avator-MelvynBDavies.png"
+  },
+  {
+    "name": "Olof “Charlie” Karis",
+    "role": "Steering Committee Member",
+    "file": "olof-charlie-karis.jpg",
+    "university_id": "uu",
+    "affiliation_text": "Uppsala University Director at MAX IV",
+    "groups": [
+      "InfraVis Steering Committee"
+    ],
+    "profile_url": "https://infravis.se/olof-charlie-karis/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/thumbnail__DSC3164©Ruona-21-1-1.jpg"
+  },
+  {
+    "name": "Tino Weinkauf",
+    "role": "Steering Committee Member",
+    "file": "tino-weinkauf.png",
+    "university_id": "kth",
+    "affiliation_text": "KTH Royal Institute of Technology Professor of Visualization",
+    "groups": [
+      "InfraVis Steering Committee",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/tino-weinkauf/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/06/avator-TinoWeinkauf.png"
+  },
+  {
+    "name": "Dagny Stuedahl",
+    "role": "Scientific Advisor",
+    "file": "dagny-stuedahl.jpeg",
+    "university_id": null,
+    "affiliation_text": "Oslo Metropolitan University professor in Media Design at the Department of Journalism and Media Studies",
+    "groups": [
+      "InfraVis Scientific Advisory Board"
+    ],
+    "profile_url": "https://infravis.se/dagny-stuedahl/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/Unknown-2.jpeg"
+  },
+  {
+    "name": "Helwig Hauser",
+    "role": "Scientific Advisor",
+    "file": "helwig-hauser.jpeg",
+    "university_id": null,
+    "affiliation_text": "University of Bergen Professor",
+    "groups": [
+      "InfraVis Scientific Advisory Board"
+    ],
+    "profile_url": "https://infravis.se/helwig-hauser/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/Helwig-Hauser.jpeg"
+  },
+  {
+    "name": "Marjolein Thunnissen",
+    "role": "Scientific Advisor",
+    "file": "marjolein-thunnissen.gif",
+    "university_id": null,
+    "affiliation_text": "MAX IV life science director",
+    "groups": [
+      "InfraVis Scientific Advisory Board"
+    ],
+    "profile_url": "https://infravis.se/marjolein-thunnissen/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/Marjolein-Thunnissen-kvadrat-web-200x200-1.gif"
+  },
+  {
+    "name": "Michael Böttinger",
+    "role": "Scientific Advisor",
+    "file": "michael-bottinger.jpeg",
+    "university_id": null,
+    "affiliation_text": "Deutsches Klimarechenzentrum group leader of visualization and outreach",
+    "groups": [
+      "InfraVis Scientific Advisory Board"
+    ],
+    "profile_url": "https://infravis.se/michael-bottinger/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/Unknown-5.jpeg"
+  },
+  {
+    "name": "Ingela Nyström",
+    "role": "Node Coordinator",
+    "file": "ingela-nystrom.jpeg",
+    "university_id": "uu",
+    "affiliation_text": "Uppsala University Professor",
+    "groups": [
+      "Management and Administration",
+      "Node Coordinators",
+      "Module Leaders",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/ingela-nystrom/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/full_image-e1699007438885.jpeg"
+  },
+  {
+    "name": "Kajsa M Paulsson",
+    "role": "Vice Director",
+    "file": "kajsa-m-paulsson.jpeg",
+    "university_id": "lu",
+    "affiliation_text": "Lund University PhD Medical Sciences, MBA in Research Infrastructure management",
+    "groups": [
+      "Management and Administration"
+    ],
+    "profile_url": "https://infravis.se/kajsa-m-paulsson/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/KMP_2023-square-1.jpeg"
+  },
+  {
+    "name": "Katharina Beckmann",
+    "role": "Communications Officer",
+    "file": "katharina-beckmann.jpg",
+    "university_id": "lu",
+    "affiliation_text": "Lund University Communications Officer",
+    "groups": [
+      "Management and Administration",
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/katharina-beckmann/",
+    "image_url": "https://infravis.se/wp-content/uploads/2024/05/image_6487327_22.jpg"
+  },
+  {
+    "name": "Lonni Besançon",
+    "role": "Application Expert, Technical Manager, InfraVis Faculty",
+    "file": "lonni-besancon.jpg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Assistant Professor",
+    "groups": [
+      "Management and Administration",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/lonni-besancon/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/09/lonni-besancon.jpg"
+  },
+  {
+    "name": "Louise Kallin",
+    "role": "Management Support",
+    "file": "louise-kallin.jpg",
+    "university_id": "chalmers",
+    "affiliation_text": "Chalmers University management support",
+    "groups": [
+      "Management and Administration"
+    ],
+    "profile_url": "https://infravis.se/kallin/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/louise-scaled.jpg"
+  },
+  {
+    "name": "Mario Romero",
+    "role": "National Technical Manager",
+    "file": "mario-romero.jpeg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University. Senior Associate Professor of Immersive Visualization",
+    "groups": [
+      "Management and Administration",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/mario-romero/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Mario-R.jpeg"
+  },
+  {
+    "name": "Monica Billger",
+    "role": "Director",
+    "file": "monica-billger.jpeg",
+    "university_id": "chalmers",
+    "affiliation_text": "Chalmers University of Technology Professor In Architecture and Visualization",
+    "groups": [
+      "Management and Administration",
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/monica-billger/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Monica-Billger-1-scaled.jpeg"
+  },
+  {
+    "name": "Patric Sander",
+    "role": "InfraVis Faculty, Technical Manager",
+    "file": "patric-sander.jpeg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Associate Professor",
+    "groups": [
+      "Management and Administration",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/patric-sander/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/12/patrik-sander.jpeg"
+  },
+  {
+    "name": "Andreas Kerren",
+    "role": "Node Coordinator",
+    "file": "andreas-kerren.jpeg",
+    "university_id": "lnu",
+    "affiliation_text": "Linnaeus University Professor",
+    "groups": [
+      "Node Coordinators",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/andreas-kerren/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Andreas-Kerren.jpeg"
+  },
+  {
+    "name": "Björn Thuresson",
+    "role": "Lab Director, Node Coordinator",
+    "file": "bjorn-thuresson.png",
+    "university_id": "kth",
+    "affiliation_text": "KTH Royal Institute of Technology Manager of Visualisation Studio VIC",
+    "groups": [
+      "Node Coordinators"
+    ],
+    "profile_url": "https://infravis.se/bjorn-thuresson/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/bjorn1.png"
+  },
+  {
+    "name": "Emanuel Larsson",
+    "role": "Node Coordinator/Embedded Expert",
+    "file": "emanuel-larsson.webp",
+    "university_id": "lu",
+    "affiliation_text": "The Faculty of Medicine, Lund University Researcher",
+    "groups": [
+      "Node Coordinators"
+    ],
+    "profile_url": "https://infravis.se/emanuel-larsson/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Emanuel-Larsson.webp"
+  },
+  {
+    "name": "Fabio Latino",
+    "role": "Node Coordinator",
+    "file": "fabio-latino.jpg",
+    "university_id": "chalmers",
+    "affiliation_text": "Chalmers University of Technology Research Engineer",
+    "groups": [
+      "Node Coordinators"
+    ],
+    "profile_url": "https://infravis.se/fabio-latino/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/profile-picture-wordpress.jpg"
+  },
+  {
+    "name": "Kostiantyn Kucher",
+    "role": "Node Coordinator, Module 5 Leader, InfraVis Faculty, Application Expert",
+    "file": "kostiantyn-kucher.png",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Associate Professor",
+    "groups": [
+      "Node Coordinators",
+      "Module Leaders",
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/kostiantyn-kucher/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/08/download.png"
+  },
+  {
+    "name": "Maria Podkorytova",
+    "role": "Application Expert",
+    "file": "maria-podkorytova.png",
+    "university_id": "umu",
+    "affiliation_text": "Umeå University Geographer",
+    "groups": [
+      "Node Coordinators"
+    ],
+    "profile_url": "https://infravis.se/maria-podkorytova/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/image001.png"
+  },
+  {
+    "name": "Mårten Sjöström",
+    "role": "Node Coordinator",
+    "file": "marten-sjostrom.jpg",
+    "university_id": "miun",
+    "affiliation_text": "Mid Sweden University Professor",
+    "groups": [
+      "Node Coordinators"
+    ],
+    "profile_url": "https://infravis.se/marten-sjostrom/",
+    "image_url": "https://infravis.se/wp-content/uploads/2024/01/marsjo.jpg"
+  },
+  {
+    "name": "Mariana Maisterrena Llaguno",
+    "role": "Module 4: User Support Leader",
+    "file": "mariana-maisterrena-llaguno.jpg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University. Research engineer",
+    "groups": [
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/mariana-maisterrena-llaguno/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/08/marma71.jpg"
+  },
+  {
+    "name": "Evelina Liliequist",
+    "role": "Module Leader (Module 6: Infrastructure collaborations and development projects)",
+    "file": "evelina-liliequist.jpg",
+    "university_id": "umu",
+    "affiliation_text": "Umeå University Associate Professor at Humlab, researcher at Centre for Regional Science",
+    "groups": [
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/evelina-liliequist/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Evelina-L-scaled.jpg"
+  },
+  {
+    "name": "Nikita Singh",
+    "role": "Application Expert",
+    "file": "nikita-singh.jpg",
+    "university_id": "uu",
+    "affiliation_text": "Uppsala University Application Expert",
+    "groups": [
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/nikita/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/09/Nikita_profile-3-1.jpg"
+  },
+  {
+    "name": "Liang Zhou",
+    "role": "Application Expert",
+    "file": "liang-zhou.png",
+    "university_id": "miun",
+    "affiliation_text": "Mid Sweden University Research Engineer",
+    "groups": [
+      "Module Leaders"
+    ],
+    "profile_url": "https://infravis.se/liang-zhou/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/LiangPhotoS.png"
+  },
+  {
+    "name": "Alexander Bock",
+    "role": "InfraVis Faculty",
+    "file": "alexander-bock.webp",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Assistant Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/alexander-bock/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/09/alex_bock.webp"
+  },
+  {
+    "name": "Michael Doggett",
+    "role": "InfraVis Faculty",
+    "file": "michael-doggett.jpg",
+    "university_id": "lu",
+    "affiliation_text": "Lund University Associate Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/michael-doggett/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/09/Doggett-e1759912581276.jpg"
+  },
+  {
+    "name": "Camilla Forsell",
+    "role": "InfraVis Faculty",
+    "file": "camilla-forsell.jpeg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Associate Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/camilla-forsell/",
+    "image_url": "https://infravis.se/wp-content/uploads/2026/05/camilla-forsell.jpeg"
+  },
+  {
+    "name": "Stefan Gelfgren",
+    "role": "InfraVis Faculty",
+    "file": "stefan-gelfgren.jpg",
+    "university_id": "umu",
+    "affiliation_text": "Umeå University Associate Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/stefan-gelfgren/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/11/Stefan-Gelfgren.jpg"
+  },
+  {
+    "name": "Anders Hast",
+    "role": "application Expert",
+    "file": "anders-hast.png",
+    "university_id": "uu",
+    "affiliation_text": "Uppsala University Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/anders-hast/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Screenshot-2023-10-04-at-10.53.16.png"
+  },
+  {
+    "name": "Ingrid Hotz",
+    "role": "InfraVis Faculty",
+    "file": "ingrid-hotz.jpeg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Professor, Head of Unit",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/ingrid-hotz/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/09/23_ingrid_hotz.jpeg"
+  },
+  {
+    "name": "Rafael M. Martins",
+    "role": "InfraVis Faculty Member",
+    "file": "rafael-m-martins.jpg",
+    "university_id": "lnu",
+    "affiliation_text": "Linnaeus University Assistant Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/rafael-m-martins/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/ramaaa_rafael_martins_2311241.jpg"
+  },
+  {
+    "name": "Christopher Peters",
+    "role": "Application Expert",
+    "file": "christopher-peters.png",
+    "university_id": "kth",
+    "affiliation_text": "KTH Royal Institute of Technology Associate Professor of HCI and Computer Graphics",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/christopher-peters/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/chpeters.png"
+  },
+  {
+    "name": "Alexandros Sopasakis",
+    "role": "Application Expert",
+    "file": "alexandros-sopasakis.jpg",
+    "university_id": "lu",
+    "affiliation_text": "Lund University Researcher",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/alexandros-sopasakis/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/Alexandros_Sopasakis.jpg"
+  },
+  {
+    "name": "Liane Thuvander",
+    "role": "Steering Committee Member",
+    "file": "liane-thuvander.png",
+    "university_id": "chalmers",
+    "affiliation_text": "Chalmers University Professor in Architecture and Sustainable development",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/liane-thuvander/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/06/avator-LianeThuvander.png"
+  },
+  {
+    "name": "Jonas Unger",
+    "role": "InfraVis Faculty",
+    "file": "jonas-unger.png",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/jonas-unger/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/avatar.png"
+  },
+  {
+    "name": "Katerina Vrotsou",
+    "role": "Application Expert",
+    "file": "katerina-vrotsou.jpg",
+    "university_id": "liu",
+    "affiliation_text": "Linköping University Associate Professor",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/katerina-vrotsou/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/06/katvr62-katerina-vrotsou-scaled.jpg"
+  },
+  {
+    "name": "Jonathan Westin",
+    "role": "Application Expert",
+    "file": "jonathan-westin.jpg",
+    "university_id": "gu",
+    "affiliation_text": "Gothenburg University Director at GRIDH",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/jonathan-westin/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/10/JonathanProfilePic.jpg"
+  },
+  {
+    "name": "Mikael Wiberg",
+    "role": "InfraVis Faculty",
+    "file": "mikael-wiberg.jpg",
+    "university_id": "umu",
+    "affiliation_text": "Umeå University Professor of Informatics",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/mikael-wiberg/",
+    "image_url": "https://infravis.se/wp-content/uploads/2025/09/mikael-winberg-rotated.jpg"
+  },
+  {
+    "name": "Kalle Åström",
+    "role": "InfraVis Faculty",
+    "file": "kalle-astrom.jpg",
+    "university_id": "lu",
+    "affiliation_text": "Lund University Professor, Researcher",
+    "groups": [
+      "InfraVis Faculty"
+    ],
+    "profile_url": "https://infravis.se/kalle-astrom/",
+    "image_url": "https://infravis.se/wp-content/uploads/2023/11/csm_150219_0163_jonas_bosse_kalle_01_861bd76798.jpg"
+  }
+]

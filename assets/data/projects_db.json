@@ -1,0 +1,1558 @@
+{
+  "source": "infravis.se",
+  "fetched": "2026-11-27",
+  "nodes": [
+    "chalmers",
+    "gu",
+    "kth",
+    "liu",
+    "lnu",
+    "lu",
+    "miun",
+    "umu",
+    "uu"
+  ],
+  "projects": [
+    {
+      "id": "truth-is-in-the-eyes-of-the-solver-an-eye-tracking-study-of-three-dimensional-chemical-structure-problems",
+      "title": "Truth is in the eyes of the solver: an eye-tracking study of three-dimensional chemical structure problems",
+      "url": "https://infravis.se/truth-is-in-the-eyes-of-the-solver-an-eye-tracking-study-of-three-dimensional-chemical-structure-problems/",
+      "year": 2026,
+      "date": "2026-11-20",
+      "type": "support",
+      "nodes": [
+        "lu",
+        "miun",
+        "umu"
+      ],
+      "node_evidence": {
+        "lu": "text",
+        "miun": "text",
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "text: Henrik Garde (LU)"
+        ],
+        "miun": [
+          "text: Emin Zerman (MIUN)",
+          "text: Liang Zhou (MIUN)",
+          "text: Mårten Sjöström (MIUN)",
+          "text: page header: Liang Zhou, Mid Sweden University"
+        ],
+        "umu": [
+          "text: Mattis Lindmark (UmU)"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": false,
+      "domain": "chemistry education",
+      "technique": "VR, eye tracking, Unreal Engine",
+      "image": "https://infravis.se/wp-content/uploads/2026/11/VRgaze_replay2.png",
+      "summary": "A VR eye-tracking platform for studying how students inspect and rotate three-dimensional molecular structures."
+    },
+    {
+      "id": "advanced-visualization-for-nutrient-recovery",
+      "title": "Advanced Visualization for Nutrient Recovery",
+      "url": "https://infravis.se/advanced-visualization-for-nutrient-recovery/",
+      "year": 2026,
+      "date": "2026-10-15",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "tag"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "tag: post tag 130",
+          "text: Ingemar Markström (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": false,
+      "domain": "environmental chemistry",
+      "technique": "volume rendering (X-ray CT), VTK",
+      "image": "https://infravis.se/wp-content/uploads/2026/10/xrdf5.png",
+      "summary": "Volume-renders X-ray microCT and fluorescence data to show how phosphates are distributed in particles from nutrient-rich waste."
+    },
+    {
+      "id": "past-platsen-asine-spar-och-tid",
+      "title": "PAST – Platsen Asine Spår och Tid",
+      "url": "https://infravis.se/past-platsen-asine-spar-och-tid/",
+      "year": 2026,
+      "date": "2026-09-25",
+      "type": "support",
+      "nodes": [
+        "gu",
+        "umu"
+      ],
+      "node_evidence": {
+        "gu": "text",
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "gu": [
+          "text: Tristan Bridge (GU)"
+        ],
+        "umu": [
+          "text: Mattis Lindmark (UMU)",
+          "text: Kajsa Palm (UMU)",
+          "text: Carl-Erik Engqvist (UMU)",
+          "text: Maria Podkorytova (UMU)"
+        ]
+      },
+      "users": [
+        "uu"
+      ],
+      "users_inferred": false,
+      "domain": "archaeology / museums",
+      "technique": "touchscreen installation (Unity), 3D models",
+      "image": "https://infravis.se/wp-content/uploads/2026/09/PAST-map.jpg",
+      "summary": "An interactive touchscreen installation at Gustavianum museum telling the archaeology of ancient Asine in Greece."
+    },
+    {
+      "id": "ct-sinogram-visualiser",
+      "title": "CT Sinogram Visualiser",
+      "url": "https://infravis.se/ct-sinogram-visualiser/",
+      "year": 2026,
+      "date": "2026-08-31",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Julius Häger (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [
+        "kth"
+      ],
+      "users_inferred": true,
+      "domain": "medical imaging / CT",
+      "technique": "3D Slicer tool, Docker",
+      "image": "https://infravis.se/wp-content/uploads/2026/08/image-3-scaled.png",
+      "summary": "Extends a tool for visualising raw CT sinogram data so researchers can inspect scans before reconstruction."
+    },
+    {
+      "id": "darkness-matters",
+      "title": "Darkness Matters",
+      "url": "https://infravis.se/darkness-matters/",
+      "year": 2026,
+      "date": "2026-08-28",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Julius Häger (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [],
+      "users_inferred": false,
+      "domain": "light pollution / environment",
+      "technique": "dome, VR, GIS",
+      "image": "https://infravis.se/wp-content/uploads/2026/08/Darkness-Matters.png",
+      "summary": "Computes current and future light-pollution levels for a fulldome documentary and integrates them into an interactive experience."
+    },
+    {
+      "id": "digital-twin-lab",
+      "title": "Digital Twin Lab",
+      "url": "https://infravis.se/digital-twin-lab/",
+      "year": 2026,
+      "date": "2026-08-18",
+      "type": "development",
+      "nodes": [
+        "chalmers"
+      ],
+      "node_evidence": {
+        "chalmers": "tag"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "tag: post tag 118",
+          "text: Vasilis Naserentin (Chalmers)",
+          "text: Orfeas Eleutheriou (Chalmers)",
+          "text: Fabio Latino (Chalmers)"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": false,
+      "domain": "urban planning",
+      "technique": "projection mapping, 3D print, digital twin",
+      "image": "https://infravis.se/wp-content/uploads/2026/08/DTCC-Digital-Twin-Lab-scaled.jpg",
+      "summary": "A lab that projects urban digital-twin simulations onto a 3D-printed city model for hands-on exploration."
+    },
+    {
+      "id": "forest-to-fork-building-a-platform-for-tracking-deforestation-and-carbon-emissions-embodied-in-the-trade-of-agricultural-commodities",
+      "title": "Forest to fork: Building a platform for tracking deforestation and carbon emissions embodied in the trade of agricultural commodities",
+      "url": "https://infravis.se/forest-to-fork-building-a-platform-for-tracking-deforestation-and-carbon-emissions-embodied-in-the-trade-of-agricultural-commodities/",
+      "year": 2026,
+      "date": "2026-08-10",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "liu"
+      ],
+      "node_evidence": {
+        "chalmers": "tag",
+        "liu": "tag"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "tag: post tag 118"
+        ],
+        "liu": [
+          "tag: post tag 132",
+          "text: Måns Gezelius (LiU)",
+          "text: Ylva Selling (LiU)",
+          "text: Yin He (LiU)",
+          "text: Lonni Besançon (LiU)"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": false,
+      "domain": "environmental economics / deforestation",
+      "technique": "web app, interactive maps",
+      "image": "https://infravis.se/wp-content/uploads/2026/08/forest-fork-6.png",
+      "summary": "A web platform tracing deforestation and carbon emissions embodied in the global trade of agricultural commodities."
+    },
+    {
+      "id": "viamd-visual-interactive-analysis-of-molecular-dynamics",
+      "title": "VIAMD (Visual Interactive Analysis of Molecular Dynamics)",
+      "url": "https://infravis.se/viamd-visual-interactive-analysis-of-molecular-dynamics/",
+      "year": 2026,
+      "date": "2026-06-25",
+      "type": "development",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Robin Skånberg (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [],
+      "users_inferred": false,
+      "domain": "computational chemistry",
+      "technique": "desktop app (C++/OpenGL), 3D molecular viz",
+      "image": "https://infravis.se/wp-content/uploads/2026/06/qm1.png",
+      "summary": "VIAMD is a desktop tool combining interactive 3D visualisation and scripted analysis of molecular dynamics trajectories."
+    },
+    {
+      "id": "forestvis-visualizing-individual-tree-characteristics-in-forest-3d-point-clouds-using-remote-sensing-data",
+      "title": "ForestVis: Visualizing Individual Tree Characteristics in Forest 3D Point Clouds Using Remote Sensing Data",
+      "url": "https://infravis.se/forestvis-visualizing-individual-tree-characteristics-in-forest-3d-point-clouds-using-remote-sensing-data/",
+      "year": 2026,
+      "date": "2026-06-02",
+      "type": "support",
+      "nodes": [
+        "lnu"
+      ],
+      "node_evidence": {
+        "lnu": "tag"
+      },
+      "node_evidence_detail": {
+        "lnu": [
+          "tag: post tag 131",
+          "text: Benjamin Powley (LnU)",
+          "text: Petra Horváth (LnU)",
+          "text: Claudio D. G. Linhares (LnU)",
+          "text: Reem Othman (LnU)",
+          "text: Karen Larkina (LnU)",
+          "text: Amilcar Soares (LnU)",
+          "text: Andreas Kerren (LnU)"
+        ]
+      },
+      "users": [
+        "lnu"
+      ],
+      "users_inferred": false,
+      "domain": "forest science / remote sensing",
+      "technique": "web app, point cloud, GIS",
+      "image": "https://infravis.se/wp-content/uploads/2026/06/forest-vis.png",
+      "summary": "ForestVis is a web-based 3D tool for exploring tree attributes in large LiDAR forest point clouds with linked views."
+    },
+    {
+      "id": "consent-forms-for-people-with-limited-previous-education",
+      "title": "Consent forms for people with limited previous education",
+      "url": "https://infravis.se/consent-forms-for-people-with-limited-previous-education/",
+      "year": 2026,
+      "date": "2026-05-29",
+      "type": "support",
+      "nodes": [
+        "umu"
+      ],
+      "node_evidence": {
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "umu": [
+          "text: Linnéa Tjernström (UmU)",
+          "text: Maria Podkorytova (UmU)"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": false,
+      "domain": "research ethics / migration studies",
+      "technique": "explanatory video, illustration",
+      "image": "https://infravis.se/wp-content/uploads/2026/05/Screenshot-2026-05-26-114549-scaled.png",
+      "summary": "Produces explanatory videos so refugees with limited schooling can give informed consent to research interviews."
+    },
+    {
+      "id": "visualizing-physical-interactions-of-molecules-in-macromolecular-scale",
+      "title": "Visualizing physical interactions of molecules in macromolecular scale",
+      "url": "https://infravis.se/visualizing-physical-interactions-of-molecules-in-macromolecular-scale/",
+      "year": 2026,
+      "date": "2026-05-21",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Ingemar Markström (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [
+        "kth"
+      ],
+      "users_inferred": false,
+      "domain": "biophysics / microscopy",
+      "technique": "3D animation (Blender)",
+      "image": "https://infravis.se/wp-content/uploads/2026/05/Screenshot-2026-04-14-130351.png",
+      "summary": "An explanatory Blender animation of a new method for measuring molecular rotation with polarised light."
+    },
+    {
+      "id": "human-timeline",
+      "title": "Human Timeline",
+      "url": "https://infravis.se/human-timeline/",
+      "year": 2026,
+      "date": "2026-02-26",
+      "type": "support",
+      "nodes": [
+        "kth",
+        "miun",
+        "umu"
+      ],
+      "node_evidence": {
+        "kth": "people",
+        "miun": "text",
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "people: Filip Berendt affiliation stated on other InfraVis project page"
+        ],
+        "miun": [
+          "text: Liang Zhou (MiUn)"
+        ],
+        "umu": [
+          "text: Kajsa Palm (UmU)"
+        ]
+      },
+      "users": [
+        "Stockholm University"
+      ],
+      "users_inferred": false,
+      "domain": "archaeology / human evolution",
+      "technique": "web app (React, Plotly), timeline",
+      "image": "https://infravis.se/wp-content/uploads/2026/02/smallPic.png",
+      "summary": "An interactive timeline app showing the coevolution of human culture, species and environmental factors over deep time."
+    },
+    {
+      "id": "3d-modeling-for-simulated-ventricular-surgery",
+      "title": "3D Modeling for simulated ventricular surgery",
+      "url": "https://infravis.se/3d-modeling-for-simulated-ventricular-surgery/",
+      "year": 2026,
+      "date": "2026-02-12",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Ingemar Markström (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [
+        "liu"
+      ],
+      "users_inferred": false,
+      "domain": "medicine / surgical training",
+      "technique": "3D modelling, 3D print, motion capture",
+      "image": "https://infravis.se/wp-content/uploads/2026/02/Screenshot-from-2026-02-09-12-54-17.png",
+      "summary": "Creates 3D-modelled and printed brain and skull parts for training a delicate ventricular drainage surgery."
+    },
+    {
+      "id": "sport-and-outdoors-sustainable-accessibility-map",
+      "title": "Sport and Outdoors Sustainable Accessibility Map",
+      "url": "https://infravis.se/sport-and-outdoors-sustainable-accessibility-map/",
+      "year": 2026,
+      "date": "2026-01-30",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "gu"
+      ],
+      "node_evidence": {
+        "chalmers": "people",
+        "gu": "text"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "people: Fabio Latino in people.json"
+        ],
+        "gu": [
+          "text: Kristin Åkerlund (GU)",
+          "text: Tristan Bridge (GU)"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": false,
+      "domain": "public health / urban planning",
+      "technique": "web map, GIS",
+      "image": "https://infravis.se/wp-content/uploads/2026/01/Screenshot-2025-10-24-at-11.34.12-scaled.png",
+      "summary": "An interactive national map of sustainable accessibility to sports and outdoor activities across Sweden."
+    },
+    {
+      "id": "gis-benchmark-tool-for-environmental-impact-of-quarries-and-mining-industry",
+      "title": "GIS Benchmark Tool for Environmental Impact of Quarries and Mining Industry",
+      "url": "https://infravis.se/gis-benchmark-tool-for-environmental-impact-of-quarries-and-mining-industry/",
+      "year": 2026,
+      "date": "2026-01-12",
+      "type": "support",
+      "nodes": [
+        "miun"
+      ],
+      "node_evidence": {
+        "miun": "text"
+      },
+      "node_evidence_detail": {
+        "miun": [
+          "text: Liang Zhou (MiUn)",
+          "text: Emin Zerman (MiUn)",
+          "text: Mårten Sjöström (MiUn)"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": false,
+      "domain": "environmental impact / mining",
+      "technique": "GIS, web app",
+      "image": "https://infravis.se/wp-content/uploads/2026/01/QuarryGIS_icon.png",
+      "summary": "QuarryGIS maps and benchmarks lifecycle environmental impacts of quarries and the construction-materials industry."
+    },
+    {
+      "id": "interactive-visualization-of-crowd-sourced-urban-data-from-tyck-till",
+      "title": "Interactive visualization of crowd sourced urban data from Tyck Till",
+      "url": "https://infravis.se/interactive-visualization-of-crowd-sourced-urban-data-from-tyck-till/",
+      "year": 2025,
+      "date": "2025-11-24",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Julius Häger (KTH)",
+          "text: Filip Berendt (KTH)",
+          "text: Björn Thuresson (KTH)"
+        ]
+      },
+      "users": [
+        "kth"
+      ],
+      "users_inferred": true,
+      "domain": "urban studies / criminology",
+      "technique": "GIS, Godot app",
+      "image": "https://infravis.se/wp-content/uploads/2025/11/TyckTill-garbage-weekend-square.jpg",
+      "summary": "An interactive map application for filtering and exploring 800,000 crowd-sourced city reports from Stockholm's Tyck Till app."
+    },
+    {
+      "id": "gis-visualization-of-archaeological-sites-in-the-upper-tigris-and-euphrates-river-basins",
+      "title": "GIS visualization of archaeological sites in the upper Tigris and Euphrates River basins",
+      "url": "https://infravis.se/gis-visualization-of-archaeological-sites-in-the-upper-tigris-and-euphrates-river-basins/",
+      "year": 2025,
+      "date": "2025-11-18",
+      "type": "support",
+      "nodes": [
+        "umu"
+      ],
+      "node_evidence": {
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "umu": [
+          "text: Dimitrios Staikoglou (UMU)",
+          "text: Maria Podkorytova (UMU)"
+        ]
+      },
+      "users": [
+        "uu"
+      ],
+      "users_inferred": true,
+      "domain": "archaeology",
+      "technique": "GIS, printed maps",
+      "image": "https://infravis.se/wp-content/uploads/2025/11/Map6-scaled.jpg",
+      "summary": "Produces GIS maps of archaeological sites in the upper Tigris-Euphrates basins tracing the shift from foraging to farming."
+    },
+    {
+      "id": "synthetic-sweden-exploring-applications-and-limitations-of-synthetic-demographic-data",
+      "title": "Synthetic Sweden – Exploring applications and limitations of synthetic demographic data",
+      "url": "https://infravis.se/synthetic-sweden-exploring-applications-and-limitations-of-synthetic-demographic-data/",
+      "year": 2025,
+      "date": "2025-08-07",
+      "type": "support",
+      "nodes": [
+        "liu"
+      ],
+      "node_evidence": {
+        "liu": "text"
+      },
+      "node_evidence_detail": {
+        "liu": [
+          "text: Yin He (LiU)",
+          "text: Måns Gezelius (LiU)",
+          "text: Rickard Falk (LiU)",
+          "text: Lonni Besancon (LiU)"
+        ]
+      },
+      "users": [
+        "liu"
+      ],
+      "users_inferred": false,
+      "domain": "demography / social science",
+      "technique": "touch table, Unreal Engine, UX design",
+      "image": "https://infravis.se/wp-content/uploads/2025/08/left.png",
+      "summary": "Extends a science-centre touch table to communicate synthetic demographic data and its limitations to the public."
+    },
+    {
+      "id": "genomelens",
+      "title": "GenomeLens",
+      "url": "https://infravis.se/genomelens/",
+      "year": 2025,
+      "date": "2025-05-07",
+      "type": "support",
+      "nodes": [
+        "gu",
+        "lnu",
+        "umu"
+      ],
+      "node_evidence": {
+        "gu": "tag",
+        "lnu": "tag",
+        "umu": "tag"
+      },
+      "node_evidence_detail": {
+        "gu": [
+          "tag: post tag 129"
+        ],
+        "lnu": [
+          "tag: post tag 131",
+          "people: Amilcar Soares affiliation stated on other InfraVis project page"
+        ],
+        "umu": [
+          "tag: post tag 123",
+          "text: Evelina Liliequist (UMU)",
+          "text: Maria Podkorytova (UMU)",
+          "people: Kajsa Palm affiliation stated on other InfraVis project page"
+        ]
+      },
+      "users": [
+        "umu",
+        "Stockholm University",
+        "uu"
+      ],
+      "users_inferred": true,
+      "domain": "population genomics",
+      "technique": "web app (Gosling.js)",
+      "image": "https://infravis.se/wp-content/uploads/2025/05/meganyctiphanes_norvegica_full_20240301-AW_filtered-Copy.jpg",
+      "summary": "GenomeLens is an open-source point-and-click web tool for visualising genetic variation along chromosomes across populations."
+    },
+    {
+      "id": "the-postcard-project",
+      "title": "The Postcard Project",
+      "url": "https://infravis.se/the-postcard-project/",
+      "year": 2025,
+      "date": "2025-04-29",
+      "type": "development",
+      "nodes": [
+        "umu",
+        "uu"
+      ],
+      "node_evidence": {
+        "umu": "tag",
+        "uu": "tag"
+      },
+      "node_evidence_detail": {
+        "umu": [
+          "tag: post tag 123",
+          "text: Carl-Erik Engqvist (UMU)",
+          "text: Maria Podkorytova (UMU)",
+          "text: Evelina Liliequist (UMU)",
+          "text: Maria Podkorytova (UMU)"
+        ],
+        "uu": [
+          "tag: post tag 128",
+          "text: Vasiliki Tsoumari (UU)"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": false,
+      "domain": "climate change / digital humanities",
+      "technique": "GIS story map (ArcGIS)",
+      "image": "https://infravis.se/wp-content/uploads/2025/04/postcard.png",
+      "summary": "Links postcards about personal climate experiences to climate-monitoring and inequality data in a GIS story map."
+    },
+    {
+      "id": "visualization-of-incommensurately-modulated-structures-on-example-of-allotropes-of-bromine-at-high-pressures",
+      "title": "Visualization of incommensurately modulated structures on example of allotropes of bromine at high pressures",
+      "url": "https://infravis.se/visualization-of-incommensurately-modulated-structures-on-example-of-allotropes-of-bromine-at-high-pressures/",
+      "year": 2025,
+      "date": "2025-04-02",
+      "type": "support",
+      "nodes": [
+        "miun"
+      ],
+      "node_evidence": {
+        "miun": "text"
+      },
+      "node_evidence_detail": {
+        "miun": [
+          "text: Liang Zhou (MIUN)",
+          "text: Emin Zerman (MIUN)",
+          "text: Roger Olsson (MIUN)",
+          "text: Mårten Sjöström (MIUN)"
+        ]
+      },
+      "users": [
+        "liu",
+        "University of Bayreuth"
+      ],
+      "users_inferred": false,
+      "domain": "materials science / crystallography",
+      "technique": "Unity 3D",
+      "image": "https://infravis.se/wp-content/uploads/2025/04/firstTrial.png",
+      "summary": "Visualises incommensurately modulated crystal structures of bromine under high pressure in an interactive 3D Unity application."
+    },
+    {
+      "id": "constructing-a-virtual-synchrotron-x-ray-beamline",
+      "title": "Constructing a virtual Synchrotron X-ray beamline",
+      "url": "https://infravis.se/constructing-a-virtual-synchrotron-x-ray-beamline/",
+      "year": 2025,
+      "date": "2025-03-24",
+      "type": "development",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "text: Jonas Ahlstedt (LU)",
+          "text: Emanuel Larsson (LU)"
+        ]
+      },
+      "users": [
+        "MAX IV"
+      ],
+      "users_inferred": false,
+      "domain": "synchrotron science / training",
+      "technique": "VR, CAD-to-Unreal",
+      "image": "https://infravis.se/wp-content/uploads/2025/03/virutal_beamline-edited.png",
+      "summary": "Turns CAD drawings of a MAX IV synchrotron beamline into an interactive VR environment for training and planning experiments."
+    },
+    {
+      "id": "interactive-tools-for-visualization-of-dna-rna-and-protein-structures",
+      "title": "Interactive tools for visualization of DNA, RNA, and protein structures",
+      "url": "https://infravis.se/interactive-tools-for-visualization-of-dna-rna-and-protein-structures/",
+      "year": 2025,
+      "date": "2025-03-04",
+      "type": "development",
+      "nodes": [
+        "chalmers",
+        "lu"
+      ],
+      "node_evidence": {
+        "chalmers": "text",
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "text: Joakim Bohlin (Chalmers)",
+          "text: Fabio Latino (Chalmers)"
+        ],
+        "lu": [
+          "text: Emanuel Larsson (LU)"
+        ]
+      },
+      "users": [
+        "MAX IV"
+      ],
+      "users_inferred": false,
+      "domain": "structural biology / nanotechnology",
+      "technique": "AR, VR, web app",
+      "image": "https://infravis.se/wp-content/uploads/2025/03/image.png",
+      "summary": "Immersive web applications for viewing DNA, RNA and protein structures from MAX IV beamlines in augmented reality."
+    },
+    {
+      "id": "inspecting-tomographic-datasets-and-protein-data-base-files-in-augmented-reality-the-perfect-tool-for-an-immersive-poster-session",
+      "title": "Inspecting tomographic datasets and Protein Data Base files in Augmented Reality – the perfect tool for an immersive poster session",
+      "url": "https://infravis.se/inspecting-tomographic-datasets-and-protein-data-base-files-in-augmented-reality-the-perfect-tool-for-an-immersive-poster-session/",
+      "year": 2025,
+      "date": "2025-02-11",
+      "type": "development",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "text: Gunter Alce (lU)",
+          "text: Jonas Ahlstedt (LU)",
+          "text: Emanuel Larsson (LU)"
+        ]
+      },
+      "users": [
+        "LINXS"
+      ],
+      "users_inferred": false,
+      "domain": "tomography / structural biology",
+      "technique": "AR (WebAR)",
+      "image": "https://infravis.se/wp-content/uploads/2025/02/microfossil_window.jpg",
+      "summary": "A WebAR workflow for viewing tomographic datasets and protein structures in augmented reality, e.g. at poster sessions."
+    },
+    {
+      "id": "volume-and-slice-visualization-in-the-cave-at-lths-vr-lab",
+      "title": "Volume and slice visualization in the CAVE at LTH’s VR lab",
+      "url": "https://infravis.se/volume-and-slice-visualization-in-the-cave-at-lths-vr-lab/",
+      "year": 2025,
+      "date": "2025-01-17",
+      "type": "development",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "text: Jens Nirme (lU)",
+          "text: Emanuel Larsson (LU)"
+        ]
+      },
+      "users": [
+        "LINXS",
+        "QIM"
+      ],
+      "users_inferred": false,
+      "domain": "tomography / earth science",
+      "technique": "CAVE, Unity, volume rendering",
+      "image": "https://infravis.se/wp-content/uploads/2025/01/IMG_5215-scaled.jpg",
+      "summary": "An application for volume and slice viewing of tomographic datasets in the immersive CAVE at LTH's VR lab."
+    },
+    {
+      "id": "nordpow",
+      "title": "NordPow",
+      "url": "https://infravis.se/nordpow/",
+      "year": 2024,
+      "date": "2024-11-27",
+      "type": "support",
+      "nodes": [
+        "umu"
+      ],
+      "node_evidence": {
+        "umu": "text"
+      },
+      "node_evidence_detail": {
+        "umu": [
+          "text: Kajsa Palm (UMU)",
+          "text: Maria Podkorytova (UMU)",
+          "text: Evelina Liliequist (UMU)"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": false,
+      "domain": "religious studies",
+      "technique": "GIS (ArcGIS)",
+      "image": "https://infravis.se/wp-content/uploads/2024/11/NordPow_prs3.png",
+      "summary": "Builds a GIS resource documenting churches and prayer houses across Norway and Sweden for religious-studies research."
+    },
+    {
+      "id": "visualizing-literacy-of-children-in-school",
+      "title": "Visualizing Literacy of Children in School",
+      "url": "https://infravis.se/visualizing-literacy-of-children-in-school/",
+      "year": 2024,
+      "date": "2024-11-05",
+      "type": "support",
+      "nodes": [
+        "kth",
+        "liu",
+        "miun"
+      ],
+      "node_evidence": {
+        "kth": "text",
+        "liu": "text",
+        "miun": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Filip Berendt (KTH)",
+          "text: Mario Romero Vega (KTH)"
+        ],
+        "liu": [
+          "text: Sergey Ignatenko (LiU)"
+        ],
+        "miun": [
+          "text: Liang Zhou (MIUN)"
+        ]
+      },
+      "users": [
+        "Örebro University",
+        "Karolinska Institutet",
+        "kth"
+      ],
+      "users_inferred": false,
+      "domain": "education / literacy",
+      "technique": "web app (D3, React)",
+      "image": "https://infravis.se/wp-content/uploads/2024/10/pexels-rdne-8499552.png",
+      "summary": "An interactive D3 dashboard for exploring eye-tracking-based reading assessments of school children."
+    },
+    {
+      "id": "utopia-web-app-study-microplastics-fate-and-transport-on-a-global-scale",
+      "title": "Utopia web app: Study Microplastics Fate And Transport On A Global Scale",
+      "url": "https://infravis.se/utopia-web-app-study-microplastics-fate-and-transport-on-a-global-scale/",
+      "year": 2024,
+      "date": "2024-09-25",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "lnu"
+      ],
+      "node_evidence": {
+        "chalmers": "tag",
+        "lnu": "tag"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "tag: post tag 118",
+          "text: InfraVis Nodes: Chalmers University, Linnaeus University",
+          "people: Fabio Latino in people.json"
+        ],
+        "lnu": [
+          "tag: post tag 131",
+          "text: InfraVis Nodes: Chalmers University, Linnaeus University",
+          "people: Karen Larkina affiliation stated on other InfraVis project page",
+          "people: Amilcar Soares affiliation stated on other InfraVis project page"
+        ]
+      },
+      "users": [
+        "Stockholm University"
+      ],
+      "users_inferred": true,
+      "domain": "environmental science / microplastics",
+      "technique": "web app (Flask, D3)",
+      "image": "https://infravis.se/wp-content/uploads/2024/09/thumbnail_cell_selection_better_rounded.png",
+      "summary": "A web app for exploring a multi-compartment model of microplastic fate and transport on a global scale."
+    },
+    {
+      "id": "dynamically-visualizing-high-dimensional-datasets-using-parallel-coordinates-plot",
+      "title": "Dynamically Visualizing high-dimensional datasets using parallel coordinates plot",
+      "url": "https://infravis.se/dynamically-visualizing-high-dimensional-datasets-using-parallel-coordinates-plot/",
+      "year": 2024,
+      "date": "2024-09-04",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Filip Berendt (KTH)",
+          "text: Mario Romero Vega (KTH)"
+        ]
+      },
+      "users": [
+        "kth"
+      ],
+      "users_inferred": false,
+      "domain": "neuromorphic computing",
+      "technique": "web app, parallel coordinates (D3)",
+      "image": "https://infravis.se/wp-content/uploads/2024/08/receptivefields.png",
+      "summary": "A D3 parallel-coordinates tool for exploring high-dimensional results from training spiking-neural-network receptive fields."
+    },
+    {
+      "id": "producing-and-rendering-a-3d-mesh-of-cassida-viridis-green-tortoise-beetle",
+      "title": "Producing and Rendering a 3D Mesh of Cassida Viridis – Green Tortoise Beetle",
+      "url": "https://infravis.se/producing-and-rendering-a-3d-mesh-of-cassida-viridis-green-tortoise-beetle/",
+      "year": 2024,
+      "date": "2024-05-02",
+      "type": "support",
+      "nodes": [
+        "kth",
+        "lu"
+      ],
+      "node_evidence": {
+        "kth": "text",
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Filip Berendt (KTH)",
+          "text: Ingemar Markström (KTH)",
+          "people: Mario Romero Vega in people.json"
+        ],
+        "lu": [
+          "text: Emanuel Larsson (LU)"
+        ]
+      },
+      "users": [
+        "lu"
+      ],
+      "users_inferred": false,
+      "domain": "biology / entomology",
+      "technique": "microCT surface extraction, Blender, Inviwo",
+      "image": "https://infravis.se/wp-content/uploads/2024/04/cassidathumbnail.png",
+      "summary": "Produces and renders a clean 3D mesh of the green tortoise beetle from microCT scans for biological research."
+    },
+    {
+      "id": "visualizing-buzz-pollination",
+      "title": "Visualizing Buzz Pollination",
+      "url": "https://infravis.se/visualizing-buzz-pollination/",
+      "year": 2023,
+      "date": "2023-12-19",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "text"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "text: Filip Berendt (KTH)",
+          "text: Ingemar Markström (KTH)",
+          "text: Mario Romero Vega (KTH)"
+        ]
+      },
+      "users": [
+        "uu"
+      ],
+      "users_inferred": false,
+      "domain": "evolutionary biology / pollination",
+      "technique": "3D animation, physics simulation (Blender)",
+      "image": "https://infravis.se/wp-content/uploads/2023/12/BuzzPollinationThumbnail.png",
+      "summary": "A physics-based Blender animation explaining how bumblebee vibrations release pollen in buzz pollination."
+    },
+    {
+      "id": "miljovis-ii-malvis-2022-2024",
+      "title": "MiljöVis II & MålVis 2022 – 2024",
+      "url": "https://infravis.se/miljovis-ii-malvis-2022-2024/",
+      "year": 2023,
+      "date": "2023-12-18",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "gu"
+      ],
+      "node_evidence": {
+        "chalmers": "tag",
+        "gu": "people"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "tag: post tag 118",
+          "text: page header: Chalmers University of Technology",
+          "people: Fabio Latino in people.json",
+          "people: Fabio Latino in people.json"
+        ],
+        "gu": [
+          "people: Jonathan Westin in people.json"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": true,
+      "domain": "urban planning / infrastructure",
+      "technique": "Unreal Engine, auralisation, 3D models",
+      "image": "https://infravis.se/wp-content/uploads/2023/12/invitation-image-final.png",
+      "summary": "Develops 3D visualisation and auralisation of invisible environmental data such as noise and air in large infrastructure models."
+    },
+    {
+      "id": "glomeruli",
+      "title": "Segmenting Glomeruli and other structures from synchrotron X-ray microtomography datasets",
+      "url": "https://infravis.se/glomeruli/",
+      "year": 2023,
+      "date": "2023-11-01",
+      "type": "support",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "text"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "text: page header: Lund University",
+          "people: Alexandros Sopasakis in people.json",
+          "people: Emanuel Larsson in people.json"
+        ]
+      },
+      "users": [
+        "lu"
+      ],
+      "users_inferred": true,
+      "domain": "medicine / diabetes (kidney)",
+      "technique": "machine-learning segmentation, synchrotron microCT",
+      "image": "https://test-infravis.ita.chalmers.se/wp-content/uploads/2023/11/Screenshot-2023-11-01-at-11.36.33-1021x1024.png",
+      "summary": "Uses machine learning to segment glomeruli in synchrotron microCT scans of rat kidneys to study diabetes effects."
+    },
+    {
+      "id": "butterflies-in-virtual-reality-developing-workflows-for-efficient-morphological-segmentation-and-analysis-of-microct-scans-lu",
+      "title": "Butterflies in Virtual Reality: developing workflows for efficient morphological segmentation and analysis of X-ray microtomography Datasets",
+      "url": "https://infravis.se/butterflies-in-virtual-reality-developing-workflows-for-efficient-morphological-segmentation-and-analysis-of-microct-scans-lu/",
+      "year": 2023,
+      "date": "2023-10-24",
+      "type": "support",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "tag"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "tag: post tag 120",
+          "text: page header: Lund University",
+          "people: Jens Nirme affiliation stated on other InfraVis project page",
+          "people: Emanuel Larsson in people.json"
+        ]
+      },
+      "users": [
+        "lu"
+      ],
+      "users_inferred": true,
+      "domain": "evolutionary biology",
+      "technique": "VR, microCT segmentation",
+      "image": "https://infravis.se/wp-content/uploads/2023/10/butterFly_image1-2.png",
+      "summary": "Develops a VR workflow for segmenting and analysing butterfly head shapes in X-ray microtomography scans."
+    },
+    {
+      "id": "the-pulse-of-the-wood",
+      "title": "The pulse of the wood",
+      "url": "https://infravis.se/the-pulse-of-the-wood/",
+      "year": 2023,
+      "date": "2023-09-29",
+      "type": "support",
+      "nodes": [
+        "lnu"
+      ],
+      "node_evidence": {
+        "lnu": "tag"
+      },
+      "node_evidence_detail": {
+        "lnu": [
+          "tag: post tag 131",
+          "text: page header: Linnaeus University",
+          "people: Rafael M. Martins in people.json",
+          "people: Andreas Kerren in people.json"
+        ]
+      },
+      "users": [
+        "lnu"
+      ],
+      "users_inferred": false,
+      "domain": "building engineering / timber",
+      "technique": "dashboard, IoT sensors, D3",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/trahus-capture.png",
+      "summary": "A near-real-time dashboard of humidity, temperature and vibration sensor data from monitored wooden buildings."
+    },
+    {
+      "id": "sead-conservation-paleobiology",
+      "title": "SEAD Conservation Paleobiology",
+      "url": "https://infravis.se/sead-conservation-paleobiology/",
+      "year": 2023,
+      "date": "2023-09-25",
+      "type": "support",
+      "nodes": [
+        "umu"
+      ],
+      "node_evidence": {
+        "umu": "tag"
+      },
+      "node_evidence_detail": {
+        "umu": [
+          "tag: post tag 123",
+          "text: page header: Umeå University",
+          "people: Mattis Lindmark affiliation stated on other InfraVis project page",
+          "people: Kajsa Palm affiliation stated on other InfraVis project page",
+          "people: Carl-Erik Engqvist affiliation stated on other InfraVis project page"
+        ]
+      },
+      "users": [
+        "umu"
+      ],
+      "users_inferred": true,
+      "domain": "paleoecology / biodiversity",
+      "technique": "environmental data visualization",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/Infravis-bild-e1695661850189.webp",
+      "summary": "Visualises the SEAD fossil and environmental database to show long-term biodiversity change linked to people and climate."
+    },
+    {
+      "id": "virtual-reality-applications-in-the-cloud",
+      "title": "Virtual Reality applications in the cloud",
+      "url": "https://infravis.se/virtual-reality-applications-in-the-cloud/",
+      "year": 2023,
+      "date": "2023-09-25",
+      "type": "support",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "tag"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "tag: post tag 120",
+          "text: page header: Lund University",
+          "people: Günter Alce affiliation stated on other InfraVis project page",
+          "people: Emanuel Larsson in people.json"
+        ]
+      },
+      "users": [
+        "lu"
+      ],
+      "users_inferred": true,
+      "domain": "genomics / stem cells",
+      "technique": "VR, cloud/5G streaming",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/A.webp",
+      "summary": "Designs infrastructure to run VR applications such as CellexalVR from the cloud over 5G/6G networks."
+    },
+    {
+      "id": "visualisation-of-pedestrian-noise-exposure",
+      "title": "Visualization of pedestrian noise exposure",
+      "url": "https://infravis.se/visualisation-of-pedestrian-noise-exposure/",
+      "year": 2023,
+      "date": "2023-09-25",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "gu"
+      ],
+      "node_evidence": {
+        "chalmers": "tag",
+        "gu": "people"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "tag: post tag 118",
+          "text: page header: Chalmers University of Technology"
+        ],
+        "gu": [
+          "people: Jonathan Westin in people.json"
+        ]
+      },
+      "users": [
+        "chalmers"
+      ],
+      "users_inferred": true,
+      "domain": "acoustics / public health",
+      "technique": "interactive map, heatmaps",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/pedestriannoiseexposure.webp",
+      "summary": "An interactive map showing pedestrians' noise exposure over the day as dynamic heatmaps."
+    },
+    {
+      "id": "3d-mapping-of-cortical-changes-leading-to-epileptic-seizures",
+      "title": "3D mapping of cortical changes leading to epileptic seizures",
+      "url": "https://infravis.se/3d-mapping-of-cortical-changes-leading-to-epileptic-seizures/",
+      "year": 2023,
+      "date": "2023-09-21",
+      "type": "support",
+      "nodes": [
+        "lu"
+      ],
+      "node_evidence": {
+        "lu": "tag"
+      },
+      "node_evidence_detail": {
+        "lu": [
+          "tag: post tag 120",
+          "text: page header: Lund University",
+          "people: Jonas Ahlstedt affiliation stated on other InfraVis project page",
+          "people: Emanuel Larsson in people.json"
+        ]
+      },
+      "users": [
+        "lu"
+      ],
+      "users_inferred": true,
+      "domain": "neuroscience / epilepsy",
+      "technique": "X-ray tomography, 3D segmentation",
+      "image": "https://infravis.se/wp-content/uploads/2024/04/Capture.png",
+      "summary": "Builds 3D maps of structural brain changes that lead to epileptic seizures from tomographic imaging data."
+    },
+    {
+      "id": "extended-rephotography",
+      "title": "Extended Rephotography",
+      "url": "https://infravis.se/extended-rephotography/",
+      "year": 2023,
+      "date": "2023-09-21",
+      "type": "support",
+      "nodes": [
+        "chalmers",
+        "gu"
+      ],
+      "node_evidence": {
+        "chalmers": "text",
+        "gu": "tag"
+      },
+      "node_evidence_detail": {
+        "chalmers": [
+          "text: page header: Chalmers University of Technology and Gothenburg University"
+        ],
+        "gu": [
+          "tag: post tag 129",
+          "text: page header: Chalmers University of Technology and Gothenburg University",
+          "people: Jonathan Westin in people.json",
+          "people: Jonathan Westin in people.json"
+        ]
+      },
+      "users": [
+        "gu"
+      ],
+      "users_inferred": true,
+      "domain": "photography / climate change",
+      "technique": "rephotography, 3D environment",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/Gothenburg.webp",
+      "summary": "Extends rephotography of Svalbard's Magdalenefjord to show 400 years of human presence and climate change."
+    },
+    {
+      "id": "analysis-of-online-activism-factors-based-on-online-petition-and-social-media-data",
+      "title": "Analysis of Online Activism Factors Based on Online Petition and Social Media Data",
+      "url": "https://infravis.se/analysis-of-online-activism-factors-based-on-online-petition-and-social-media-data/",
+      "year": 2023,
+      "date": "2023-09-21",
+      "type": "support",
+      "nodes": [
+        "lnu"
+      ],
+      "node_evidence": {
+        "lnu": "tag"
+      },
+      "node_evidence_detail": {
+        "lnu": [
+          "tag: post tag 131",
+          "text: page header: Linnaeus University",
+          "people: Konstiantyn Kucher in people.json",
+          "people: Rafael M. Martins in people.json",
+          "people: Andreas Kerren in people.json"
+        ]
+      },
+      "users": [
+        "lnu"
+      ],
+      "users_inferred": true,
+      "domain": "political science",
+      "technique": "infovis dashboard",
+      "image": "https://infravis.se/wp-content/uploads/2023/09/Screenshot-2023-09-21-at-18.51.46.png",
+      "summary": "An interactive dashboard helps political scientists relate social-media discussion of e-petitions to theories of mobilisation."
+    },
+    {
+      "id": "in-situ-visualization-support-in-nek5000",
+      "title": "In-situ Visualization Support in Nek5000",
+      "url": "https://infravis.se/in-situ-visualization-support-in-nek5000/",
+      "year": 2023,
+      "date": "2023-09-21",
+      "type": "support",
+      "nodes": [
+        "kth"
+      ],
+      "node_evidence": {
+        "kth": "tag"
+      },
+      "node_evidence_detail": {
+        "kth": [
+          "tag: post tag 130",
+          "text: page header: KTH Royal Institute of Techonology",
+          "people: Ingemar Markström affiliation stated on other InfraVis project page",
+          "people: Tino Weinkauf in people.json",
+          "people: Mario Romero in people.json"
+        ]
+      },
+      "users": [
+        "kth"
+      ],
+      "users_inferred": true,
+      "domain": "fluid dynamics / aeronautics",
+      "technique": "in-situ visualization, HPC",
+      "image": "https://infravis.se/wp-content/uploads/2023/06/graph-PilotKTH.png",
+      "summary": "Adds in-situ visualisation to the Nek5000 solver so airflow around wings can be seen while simulations run."
+    },
+    {
+      "id": "digital-twin",
+      "title": "Medical Digital Twin",
+      "url": "https://infravis.se/digital-twin/",
+      "year": 2023,
+      "date": "2023-09-18",
+      "type": "support",
+      "nodes": [
+        "liu"
+      ],
+      "node_evidence": {
+        "liu": "tag"
+      },
+      "node_evidence_detail": {
+        "liu": [
+          "tag: post tag 132",
+          "text: page header: Linköping University",
+          "people: Lonni Besançon in people.json"
+        ]
+      },
+      "users": [
+        "liu"
+      ],
+      "users_inferred": true,
+      "domain": "medicine / health communication",
+      "technique": "Unreal Engine, motion capture",
+      "image": "https://infravis.se/wp-content/uploads/2023/06/graph-PilotLiu2.png",
+      "summary": "Visualises a personal medical digital twin in Unreal Engine to make health-model predictions tangible for patients."
+    }
+  ],
+  "edges": [
+    {
+      "a": "chalmers",
+      "b": "gu",
+      "weight": 4,
+      "projects": [
+        "sport-and-outdoors-sustainable-accessibility-map",
+        "miljovis-ii-malvis-2022-2024",
+        "visualisation-of-pedestrian-noise-exposure",
+        "extended-rephotography"
+      ]
+    },
+    {
+      "a": "umu",
+      "b": "uu",
+      "weight": 4,
+      "projects": [
+        "past-platsen-asine-spar-och-tid",
+        "gis-visualization-of-archaeological-sites-in-the-upper-tigris-and-euphrates-river-basins",
+        "genomelens",
+        "the-postcard-project"
+      ]
+    },
+    {
+      "a": "gu",
+      "b": "umu",
+      "weight": 2,
+      "projects": [
+        "past-platsen-asine-spar-och-tid",
+        "genomelens"
+      ]
+    },
+    {
+      "a": "gu",
+      "b": "uu",
+      "weight": 2,
+      "projects": [
+        "past-platsen-asine-spar-och-tid",
+        "genomelens"
+      ]
+    },
+    {
+      "a": "kth",
+      "b": "liu",
+      "weight": 2,
+      "projects": [
+        "3d-modeling-for-simulated-ventricular-surgery",
+        "visualizing-literacy-of-children-in-school"
+      ]
+    },
+    {
+      "a": "kth",
+      "b": "miun",
+      "weight": 2,
+      "projects": [
+        "human-timeline",
+        "visualizing-literacy-of-children-in-school"
+      ]
+    },
+    {
+      "a": "kth",
+      "b": "umu",
+      "weight": 2,
+      "projects": [
+        "advanced-visualization-for-nutrient-recovery",
+        "human-timeline"
+      ]
+    },
+    {
+      "a": "liu",
+      "b": "miun",
+      "weight": 2,
+      "projects": [
+        "visualization-of-incommensurately-modulated-structures-on-example-of-allotropes-of-bromine-at-high-pressures",
+        "visualizing-literacy-of-children-in-school"
+      ]
+    },
+    {
+      "a": "miun",
+      "b": "umu",
+      "weight": 2,
+      "projects": [
+        "truth-is-in-the-eyes-of-the-solver-an-eye-tracking-study-of-three-dimensional-chemical-structure-problems",
+        "human-timeline"
+      ]
+    },
+    {
+      "a": "chalmers",
+      "b": "liu",
+      "weight": 1,
+      "projects": [
+        "forest-to-fork-building-a-platform-for-tracking-deforestation-and-carbon-emissions-embodied-in-the-trade-of-agricultural-commodities"
+      ]
+    },
+    {
+      "a": "chalmers",
+      "b": "lnu",
+      "weight": 1,
+      "projects": [
+        "utopia-web-app-study-microplastics-fate-and-transport-on-a-global-scale"
+      ]
+    },
+    {
+      "a": "chalmers",
+      "b": "lu",
+      "weight": 1,
+      "projects": [
+        "interactive-tools-for-visualization-of-dna-rna-and-protein-structures"
+      ]
+    },
+    {
+      "a": "chalmers",
+      "b": "miun",
+      "weight": 1,
+      "projects": [
+        "gis-benchmark-tool-for-environmental-impact-of-quarries-and-mining-industry"
+      ]
+    },
+    {
+      "a": "gu",
+      "b": "lnu",
+      "weight": 1,
+      "projects": [
+        "genomelens"
+      ]
+    },
+    {
+      "a": "kth",
+      "b": "lu",
+      "weight": 1,
+      "projects": [
+        "producing-and-rendering-a-3d-mesh-of-cassida-viridis-green-tortoise-beetle"
+      ]
+    },
+    {
+      "a": "kth",
+      "b": "uu",
+      "weight": 1,
+      "projects": [
+        "visualizing-buzz-pollination"
+      ]
+    },
+    {
+      "a": "lnu",
+      "b": "umu",
+      "weight": 1,
+      "projects": [
+        "genomelens"
+      ]
+    },
+    {
+      "a": "lnu",
+      "b": "uu",
+      "weight": 1,
+      "projects": [
+        "genomelens"
+      ]
+    },
+    {
+      "a": "lu",
+      "b": "miun",
+      "weight": 1,
+      "projects": [
+        "truth-is-in-the-eyes-of-the-solver-an-eye-tracking-study-of-three-dimensional-chemical-structure-problems"
+      ]
+    },
+    {
+      "a": "lu",
+      "b": "umu",
+      "weight": 1,
+      "projects": [
+        "truth-is-in-the-eyes-of-the-solver-an-eye-tracking-study-of-three-dimensional-chemical-structure-problems"
+      ]
+    }
+  ],
+  "node_counts": {
+    "chalmers": 9,
+    "gu": 6,
+    "kth": 13,
+    "liu": 6,
+    "lnu": 5,
+    "lu": 10,
+    "miun": 5,
+    "umu": 10,
+    "uu": 5
+  }
+}
